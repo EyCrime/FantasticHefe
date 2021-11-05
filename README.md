@@ -13,10 +13,7 @@
 * Linke Maustaste: Normaler Wasserschuss
   * fliegt straight, aber hat keine unendliche Reichweite
   * 3 Hits, um einen Gegner zu besiegen
-* Rechte Maustaste: Furzbombe
-  * macht einen Bogen und kann nur verwendet werden, wenn man 100% Co2 hat
-  * Gedrückt Halten erhöht den Wurfwinkel
-* Highscore → Score wird durch sammeln von Zucker, Kills und Co2 erhöht
+* Highscore → Score wird durch sammeln von Zucker, Kills und Restzeit erhöht
 * Gegner → Lava und Ice Spirits
   * können sich auf einem Pfad bewegen (links & rechts/ oben & unten). Schießen in die Richtung des Gegners, aber keine Verfolgungsschüsse.
   * haben Lebensbalken
@@ -25,18 +22,21 @@
 * Gameover: Temperatur zu hoch/tief, Gegner 4 mal getroffen (3 Leben), runterfallen oder Zeitlimit abgelaufen
 
 ### Should have
+* Rechte Maustaste: Furzbombe
+  * macht einen Bogen und kann nur verwendet werden, wenn man 100% Co2 hat
+  * Gedrückt Halten erhöht den Wurfwinkel
 * Hintergrundmusik & Sound Effects
+* Score lokal speicherbar
 
 ### Nice to have
 * Mehr Level
 * Endless Level
 * Ansteigende Schwierigkeit
 * PowerUps
-* Lokal Speicherbar
 * Scoreboard
 * Final Boss
 * Shop
-* 3. Art von Zucker als Währung für den Shop
+* Dritte Art von Zucker als Währung für den Shop
 * Secrets/ Rätsel
 * Gegner die einen verfolgen
 

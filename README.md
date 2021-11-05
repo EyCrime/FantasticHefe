@@ -1,21 +1,50 @@
 # Spielidee
-Ein Jump ‘n’ Run Spiel von der Seitenansicht wie Super Mario.
-level basierend- aufbauend auf einem (Zeit/Aufwand)
-ggf. mehr → endless ; Donkey Kong?
+* Ein Jump ‘n’ Run Spiel von der Seitenansicht wie Super Mario.
+* Hefepilz versucht im Teig zu überleben, um seinen richtigen Spot im Teig zu finden.
+* Er wird von Feinden angegriffen, die er besiegen kann, aber muss stets auf die Teigtemperatur achten.
 
 ## Hauptmechanik
-* W, A, (S = Ducken), D (und Pfeiltasten - leertaste & Maus?) zum Bewegen 
-* Leertaste/Maus Waffe zum Schießen, Hefe hinterlässt stinkende Geruchsspur, die sich nach 10 Sekunden zu einem Kothaufen entwickelt
-* Punkte sammeln (Münzen/Collectibles)
-* (If(time)Zufällige) Power-Ups kriegen
-* Doppelsprünge
-* Der Schwierigkeitsgrad steigt jedes Level
-* Zeitlimit
-* 3 Leben pro Run. Wenn man ein Level mit 2 Leben beendet, startet man auch mit 2 Leben. Secrets möglich mit extra Leben (Rätsel evtl.)
+* 1 Level
+* W, A, D (Pfeiltasten & Leertaste) zum Bewegen  
+* Doppel W oder Leertaste für Doppelsprünge und fliegen
+* Kamera läuft mit dem Charakter immer mit (hoch + runter und rechts + links)
+* Zucker sammeln (für Score und Co2 Balken)
+* Co2 Ladebalken für Sprünge und Attacken → wenn leer dann nicht möglich
+* Linke Maustaste: Normaler Wasserschuss
+  * fliegt straight, aber hat keine unendliche Reichweite
+  * 3 Hits, um einen Gegner zu besiegen
+* Rechte Maustaste: Furzbombe
+  * macht einen Bogen und kann nur verwendet werden, wenn man 100% Co2 hat
+  * Gedrückt Halten erhöht den Wurfwinkel
+* Highscore → Score wird durch sammeln von Zucker, Kills und Co2 erhöht
+* Gegner → Lava und Ice Spirits
+  * können sich auf einem Pfad bewegen (links & rechts/ oben & unten). Schießen in die Richtung des Gegners, aber keine Verfolgungsschüsse.
+  * haben Lebensbalken
+* Temperatur steigt beim killen von Ice Spirits und sinkt beim killen von Fire Spirits →  Ziel ist die Temperatur mittig zu halten
+* mehrere Zuckerarten für sowohl Wasser (kaltes/heißes Wasser) und Co2
+* Gameover: Temperatur zu hoch/tief, Gegner 4 mal getroffen (3 Leben), runterfallen oder Zeitlimit abgelaufen
+
+### Should have
+* Hintergrundmusik & Sound Effects
+
+### Nice to have
+* Mehr Level
+* Endless Level
+* Ansteigende Schwierigkeit
+* PowerUps
+* Lokal Speicherbar
+* Scoreboard
+* Final Boss
+* Shop
+* 3. Art von Zucker als Währung für den Shop
+* Secrets/ Rätsel
+* Gegner die einen verfolgen
 
 ## Genre & Art Style
 * Jump ‘n’ Run
-* Cartoonartig
+* Cartoon
+* Hefepilz im Teig
+
 
 ## Mitarbeiter
 * Emircan Yüksel

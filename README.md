@@ -6,27 +6,31 @@
 ## Hauptmechanik
 * 1 Level
 * W, A, D (Pfeiltasten & Leertaste) zum Bewegen  
-* Doppel W oder Leertaste für Doppelsprünge und fliegen
 * Kamera läuft mit dem Charakter immer mit (hoch + runter und rechts + links)
 * Zucker sammeln (für Score und Co2 Balken)
 * Co2 Ladebalken für Sprünge und Attacken → wenn leer dann nicht möglich
+* Doppel W oder Leertaste für Doppelsprünge und fliegen
 * Linke Maustaste: Normaler Wasserschuss
-  * fliegt straight, aber hat keine unendliche Reichweite
+  * Fliegt straight, aber hat keine unendliche Reichweite
   * 3 Hits, um einen Gegner zu besiegen
 * Highscore → Score wird durch sammeln von Zucker, Kills und Restzeit erhöht
-* Gegner → Lava und Ice Spirits
-  * können sich auf einem Pfad bewegen (links & rechts/ oben & unten). Schießen in die Richtung des Gegners, aber keine Verfolgungsschüsse.
+* Gegner → Lava Spirits
+  * Können sich auf einem Pfad bewegen (links & rechts/ oben & unten). Schießen in die Richtung des Gegners, aber keine Verfolgungsschüsse.
   * haben Lebensbalken
-* Temperatur steigt beim killen von Ice Spirits und sinkt beim killen von Fire Spirits →  Ziel ist die Temperatur mittig zu halten
-* mehrere Zuckerarten für sowohl Wasser (kaltes/heißes Wasser) und Co2
-* Gameover: Temperatur zu hoch/tief, Gegner 4 mal getroffen (3 Leben), runterfallen oder Zeitlimit abgelaufen
+* Zwei Zuckerarten für sowohl Wasser (Icon mit Anzahl der Munition) und Co2  (Ladebalken mit Manaanzeige)
+* Gameover: Gegner 4 mal getroffen (3 Leben), runterfallen oder Zeitlimit abgelaufen
 
 ### Should have
 * Rechte Maustaste: Furzbombe
-  * macht einen Bogen und kann nur verwendet werden, wenn man 100% Co2 hat
+  * Macht einen Bogen und kann nur verwendet werden, wenn man 100% Co2 hat
   * Gedrückt Halten erhöht den Wurfwinkel
-* Hintergrundmusik & Sound Effects
-* Score lokal speicherbar
+* Sound Effects
+* Hintergrundmusik
+* Score lokal speicherbar-json
+* Temperatur steigt beim killen von Ice Spirits und sinkt beim killen von Fire Spirits →  Ziel ist die Temperatur mittig zu halten
+* Ice Spirits
+* Zuckerart für heißes Wasser
+* Gameover: Temperatur zu hoch/tief
 
 ### Nice to have
 * Mehr Level
@@ -36,7 +40,7 @@
 * Scoreboard
 * Final Boss
 * Shop
-* Dritte Art von Zucker als Währung für den Shop
+* Vierte Art von Zucker als Währung für den Shop
 * Secrets/ Rätsel
 * Gegner die einen verfolgen
 

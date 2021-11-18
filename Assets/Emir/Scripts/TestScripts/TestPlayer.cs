@@ -4,24 +4,76 @@ using UnityEngine;
 
 public class TestPlayer : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private FloatValue maxHealth;
     [SerializeField] private FloatValue currentHealth;
+    [SerializeField] private Inventory playerInventory;
     [SerializeField] private SignalObject playerHealthSignal;
+    [SerializeField] private SignalObject coldWaterSignal;
+    [SerializeField] private SignalObject hotWaterSignal;
+    [SerializeField] private SignalObject scoreSignal;
+
+    private void Awake()
+    {
+        currentHealth.initialValue = maxHealth.initialValue;
+        playerHealthSignal.Raise();
+        coldWaterSignal.Raise();
+        hotWaterSignal.Raise();
+        scoreSignal.Raise();
+    }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            currentHealth.runtimeValue--;
+            currentHealth.initialValue--;
             playerHealthSignal.Raise();
-            if(currentHealth.runtimeValue <= 0)
+            if(currentHealth.initialValue <= 0)
                 gameObject.SetActive(false); // Gameover
         }
-        else if(Input.GetKeyDown(KeyCode.Return))
+        else if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if(currentHealth.runtimeValue < maxHealth)
+            if(currentHealth.initialValue < maxHealth.initialValue)
             {
-                currentHealth.runtimeValue++;
+                currentHealth.initialValue++;
                 playerHealthSignal.Raise();
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.W))
+        {
+            playerInventory.coldWater++;
+            coldWaterSignal.Raise();
+        }
+        else if(Input.GetKeyDown(KeyCode.S))
+        {
+            if(playerInventory.coldWater > 0)
+            {
+                playerInventory.coldWater--;
+                coldWaterSignal.Raise();
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.A))
+        {
+            playerInventory.hotWater++;
+            hotWaterSignal.Raise();
+        }
+        else if(Input.GetKeyDown(KeyCode.D))
+        {
+            if(playerInventory.hotWater > 0)
+            {
+                playerInventory.hotWater--;
+                hotWaterSignal.Raise();
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            playerInventory.score += 10;
+            scoreSignal.Raise();
+        }
+        else if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if(playerInventory.score > 0)
+            {
+                playerInventory.score -= 10;
+                scoreSignal.Raise();
             }
         }
     }

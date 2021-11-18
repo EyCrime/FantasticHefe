@@ -16,15 +16,19 @@ public class PlayerBullet : MonoBehaviour
         Destroy(gameObject, expireTime);
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D hitInfo)               // wenn man die Methode auskommentiert, fliegt die kugel wieder oder man verschiebt im editor den bulletspawn wtf
     {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if (enemy != null)
+        if (!hitInfo.CompareTag("Player"))
         {
-            enemy.TakeDamage(damage);
+
+            Enemy enemy = hitInfo.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Debug.Log("vallah getroffen");
+            Destroy(gameObject);
         }
-        Debug.Log("vallah getroffen");
-        Destroy(gameObject);
     }
 
 

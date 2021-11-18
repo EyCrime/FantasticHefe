@@ -5,8 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health = 100;
+    public int currentHealth;
     public float speed;
     public float stoppingDistance;
+
+    public HealthBar healthBar;
 
     private float timeBetweenShots;
     public float startTimeBetweenShots;
@@ -19,6 +22,9 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         timeBetweenShots = startTimeBetweenShots;
+
+        currentHealth = health;
+        healthBar.SetMaxHealth(health);
     }
 
     void Update()
@@ -48,6 +54,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        healthBar.SetHealth(health);
 
         if (health <= 0)
         {

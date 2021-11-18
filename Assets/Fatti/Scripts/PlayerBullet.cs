@@ -26,7 +26,6 @@ public class PlayerBullet : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
-            Debug.Log("vallah getroffen");
             Destroy(gameObject);
         }
     }

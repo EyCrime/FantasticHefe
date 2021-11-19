@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b5216ba612c4a4990a332077411e83, type: 3}
-  m_Name: PlayerMaxHealth
+  m_Script: {fileID: 11500000, guid: f78d66477cdea4949835e0df49e61e65, type: 3}
+  m_Name: Temperature
   m_EditorClassIdentifier: 
-  initialValue: 3
+  max: 10
+  min: 0
+  current: 0
+  normal: 5

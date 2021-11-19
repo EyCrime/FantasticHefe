@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class HeartManager : MonoBehaviour
 {
     [SerializeField] private Image[] hearts;
-    [SerializeField] private FloatValue playerMaxHealth;
-    [SerializeField] private FloatValue playerCurrentHealth;
+    [SerializeField] private Inventory playerInventory;
     [SerializeField] private GameObject damagePane;
     [SerializeField] private float damageTime = 0.5f;
 
     public void UpdateHearts()
     {
-        for (int i = 0; i < playerMaxHealth.initialValue; i++)
+        for (int i = 0; i < playerInventory.maxHealth; i++)
         {
-            if(i < playerCurrentHealth.initialValue)
+            if(i < playerInventory.currentHealth)
                 hearts[i].gameObject.SetActive(true);
             else
             {

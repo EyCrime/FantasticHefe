@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 869b7bf926295dc49a3d893f741728d4, type: 3}
-  m_Name: PlayerInventory
+  m_Script: {fileID: 11500000, guid: c7a50f194a78b2d4e92329d14879bfda, type: 3}
+  m_Name: Timer
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 3
-  coldWater: 0
-  hotWater: 2
-  score: 0
-  maxCO2: 5
-  currentCO2: 0
+  startMinutes: 5
+  currentTime: 300

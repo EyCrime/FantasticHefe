@@ -11,6 +11,7 @@ public class TestPlayer : MonoBehaviour
     [SerializeField] private SignalObject coldWaterSignal;
     [SerializeField] private SignalObject hotWaterSignal;
     [SerializeField] private SignalObject scoreSignal;
+    [SerializeField] private SignalObject switchAmmoSignal;
 
     private void Awake()
     {
@@ -75,6 +76,10 @@ public class TestPlayer : MonoBehaviour
                 playerInventory.score -= 10;
                 scoreSignal.Raise();
             }
+        }
+        else if(Input.GetKeyDown(KeyCode.R))
+        {
+            switchAmmoSignal.Raise();
         }
     }
 }

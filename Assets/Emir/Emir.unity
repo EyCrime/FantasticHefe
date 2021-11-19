@@ -515,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &327268847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -635,6 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
   itemDisplay: {fileID: 1727254666}
+  Item: 0
 --- !u!114 &376456522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,7 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba1a939f9453394fa427befd25f9e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 811b52d82a4248d4c8238fd992d0cb76, type: 2}
+  signal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
   signalEvent:
     m_PersistentCalls:
       m_Calls:
@@ -823,7 +824,7 @@ MonoBehaviour:
   - {fileID: 100129647}
   - {fileID: 327268848}
   - {fileID: 895234247}
-  playerMaxHealth: {fileID: 0}
+  playerMaxHealth: {fileID: 11400000, guid: c85669a5fac28444aa6c205040019387, type: 2}
   playerCurrentHealth: {fileID: 11400000, guid: c71a4a3566bc07e48954ee73892a12cc, type: 2}
   damagePane: {fileID: 1246193117}
   damageTime: 0.5
@@ -1036,7 +1037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &895234246
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1179,6 +1180,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1047536518}
   - component: {fileID: 1047536519}
+  - component: {fileID: 1047536521}
+  - component: {fileID: 1047536520}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1215,6 +1218,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047536517}
   m_CullTransparentMesh: 1
+--- !u!114 &1047536520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047536517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e345a345caa9f248aa9813ef5830411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  itemDisplay: {fileID: 1342503301}
+  Item: 2
+--- !u!114 &1047536521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047536517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba1a939f9453394fa427befd25f9e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1047536520}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: UpdateInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1140256862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1468,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1227062049}
   - component: {fileID: 1227062050}
+  - component: {fileID: 1227062051}
+  - component: {fileID: 1227062052}
   m_Layer: 5
   m_Name: Warm Water
   m_TagString: Untagged
@@ -1458,6 +1506,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227062048}
   m_CullTransparentMesh: 1
+--- !u!114 &1227062051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227062048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba1a939f9453394fa427befd25f9e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1227062052}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: UpdateInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1227062052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227062048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e345a345caa9f248aa9813ef5830411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  itemDisplay: {fileID: 1473893857}
+  Item: 1
 --- !u!1 &1246193117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,7 +1658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1342503301
@@ -1626,7 +1717,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2116,11 +2207,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f29296d7158904091888487f44314d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: {fileID: 0}
+  maxHealth: {fileID: 11400000, guid: c85669a5fac28444aa6c205040019387, type: 2}
   currentHealth: {fileID: 11400000, guid: c71a4a3566bc07e48954ee73892a12cc, type: 2}
   playerInventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: 1fa3b4a86a7daeb428b51a035e3a0a8b, type: 2}
-  receivedSignal: {fileID: 11400000, guid: 811b52d82a4248d4c8238fd992d0cb76, type: 2}
+  coldWaterSignal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
+  hotWaterSignal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
+  scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
 --- !u!1 &1601004089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,6 +2610,7 @@ GameObject:
   - component: {fileID: 1945225626}
   - component: {fileID: 1945225628}
   - component: {fileID: 1945225627}
+  - component: {fileID: 1945225629}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -2640,6 +2734,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945225625}
   m_CullTransparentMesh: 1
+--- !u!114 &1945225629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945225625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a50f194a78b2d4e92329d14879bfda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTimeText: {fileID: 1945225627}
+  startMinutes: 5
+  currentTime: 0
 --- !u!1 &1951581239
 GameObject:
   m_ObjectHideFlags: 0

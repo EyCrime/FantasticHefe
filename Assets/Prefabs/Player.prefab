@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 6541026576524994257}
   - component: {fileID: 5771595989887656324}
   - component: {fileID: 8906437542960751725}
-  - component: {fileID: 310133745027472081}
   - component: {fileID: 5256800419655555553}
   m_Layer: 3
   m_Name: Player
@@ -244,7 +243,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 7877715399706416575}
-  bulletPrefab: {fileID: 8818128758162697875, guid: 111e432064326ee4391bed50a1d4f044, type: 3}
+  inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  coldWaterBulletPrefab: {fileID: 7580769789054152623, guid: a553b87fba8affc46806311e12238d24, type: 3}
+  hotWaterBulletPrefab: {fileID: 8818128758162697875, guid: 111e432064326ee4391bed50a1d4f044, type: 3}
+  switchAmmoSignal: {fileID: 11400000, guid: 478d20ed8cdbd62479bc29dd19cafb49, type: 2}
+  coldWaterSignal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
+  hotWaterSignal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
 --- !u!50 &5771595989887656322
 Rigidbody2D:
   serializedVersion: 4
@@ -335,15 +339,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  temperature: {fileID: 11400000, guid: d70c8404d7089894b8ce25555e9db0b6, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: 1fa3b4a86a7daeb428b51a035e3a0a8b, type: 2}
-  CO2Signal: {fileID: 11400000, guid: 9c7cb1e3cd220a24b8476c03472d807a, type: 2}
-  temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
+  startTimerSignal: {fileID: 11400000, guid: 38ef7d4c6b42a2745a3a6114e653b2d2, type: 2}
+  stopTimerSignal: {fileID: 11400000, guid: 43c5b08ce63e6a14ba09745de0382718, type: 2}
   coldWaterSignal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
   hotWaterSignal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
   scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
-  switchAmmoSignal: {fileID: 11400000, guid: 478d20ed8cdbd62479bc29dd19cafb49, type: 2}
-  startTimerSignal: {fileID: 11400000, guid: 38ef7d4c6b42a2745a3a6114e653b2d2, type: 2}
-  stopTimerSignal: {fileID: 11400000, guid: 43c5b08ce63e6a14ba09745de0382718, type: 2}
+  CO2Signal: {fileID: 11400000, guid: 9c7cb1e3cd220a24b8476c03472d807a, type: 2}
+  temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
 --- !u!61 &5256800419655555553
 BoxCollider2D:
   m_ObjectHideFlags: 0

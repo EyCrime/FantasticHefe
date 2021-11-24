@@ -239,6 +239,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2243963562953487847, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+      propertyPath: switchAmmoSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 478d20ed8cdbd62479bc29dd19cafb49, type: 2}
+    - target: {fileID: 2243963562953487847, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+      propertyPath: hotWaterBulletPrefab
+      value: 
+      objectReference: {fileID: 8818128758162697875, guid: 111e432064326ee4391bed50a1d4f044, type: 3}
+    - target: {fileID: 2243963562953487847, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+      propertyPath: coldWaterBulletPrefab
+      value: 
+      objectReference: {fileID: 7580769789054152623, guid: a553b87fba8affc46806311e12238d24, type: 3}
     - target: {fileID: 5771595989887656349, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
       propertyPath: m_Name
       value: Player
@@ -287,6 +299,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+    - target: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+      propertyPath: stopTimerSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 43c5b08ce63e6a14ba09745de0382718, type: 2}
+    - target: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+      propertyPath: startTimerSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 38ef7d4c6b42a2745a3a6114e653b2d2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
 --- !u!4 &1130322912 stripped

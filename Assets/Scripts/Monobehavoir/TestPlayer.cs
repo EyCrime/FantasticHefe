@@ -31,9 +31,7 @@ public class TestPlayer : MonoBehaviour
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            playerInventory.currentHealth--;
-            playerHealthSignal.Raise();
+        {           
             if (playerInventory.currentHealth <= 0)
             {
                 GameOver();

@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int health = 100;
-    public float movementSpeed = 2;
+    public Inventory playerInventory;
+    public SignalObject playerHealthSignal;
+    public SignalObject startTimerSignal;
+    public SignalObject stopTimerSignal;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        startTimerSignal.Raise();
+        playerInventory.currentHealth = playerInventory.maxHealth;
+        playerHealthSignal.Raise();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        var movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * movementSpeed;
-    }
-
     public void TakeDamage(int damage)
     {
-        health -= damage;
-
-        if (health <= 0)
+        playerInventory.currentHealth--;
+        playerHealthSignal.Raise();
+        if (playerInventory.currentHealth <= 0)
         {
             Die();
         }
@@ -31,6 +30,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        stopTimerSignal.Raise();
     }
 }

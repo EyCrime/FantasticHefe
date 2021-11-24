@@ -13,21 +13,25 @@ public class EnemyProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        target = new Vector2(player.position.x, player.position.y);
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            target = new Vector2(player.position.x, player.position.y);
+        }      
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-
-        if(transform.position.x == target.x && transform.position.y == target.y)
+        if (player != null)
         {
-            DestroyProjectile();
-        }
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
+            if (transform.position.x == target.x && transform.position.y == target.y)
+            {
+                DestroyProjectile();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)

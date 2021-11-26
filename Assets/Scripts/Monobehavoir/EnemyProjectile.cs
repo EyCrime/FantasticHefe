@@ -45,7 +45,7 @@ public class EnemyProjectile : MonoBehaviour
         {
 
             Player player = hitInfo.GetComponent<Player>();
-            if (player != null)
+            if (player != null && hitInfo.isTrigger)
             {
                 player.TakeDamage(damage);
             }

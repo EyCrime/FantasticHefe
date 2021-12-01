@@ -23,7 +23,7 @@ public class PlayerMovement2D : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jump = true;
-        }
+        } 
     
         if(Input.GetButtonDown("Crouch"))
         {
@@ -35,10 +35,9 @@ public class PlayerMovement2D : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
+    {      
         //move character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch,jump);
         jump=false;
-
     }
 }

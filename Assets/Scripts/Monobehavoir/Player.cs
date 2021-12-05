@@ -15,6 +15,14 @@ public class Player : MonoBehaviour
     public SignalObject CO2Signal;
     public SignalObject temperatureSignal;
 
+    public float force;
+
+    public Rigidbody2D rb;
+
+    public float knockDur;
+    public float knockbackPwr;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,4 +57,52 @@ public class Player : MonoBehaviour
         gameObject.SetActive(false);
         stopTimerSignal.Raise();
     }
+
+     void OnTriggerEnter2D(Collider2D collision)   //von dem kleinen jungen aber man wird nicht nach rechts gestoﬂen https://www.youtube.com/watch?v=-dMtWZsjX6g
+     {
+         if (collision.CompareTag("Enemy")) 
+         {
+            TakeDamage(25);
+
+            StartCoroutine(Knockback(knockDur, knockbackPwr, transform.position));
+         }
+     }
+
+    /*void OnTriggerEnter2D(Collider2D collision)         //sieht clean aus aber man fliegt hoch https://www.youtube.com/watch?v=lGUPG7smpXo
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            TakeDamage(25);
+
+            Vector3 pushDirection = collision.transform.position - transform.position;
+
+            pushDirection = -pushDirection.normalized;
+
+            GetComponent<Rigidbody2D>().AddForce(pushDirection * force * 100);
+        }
+    }*/
+
+    /* void OnTriggerEnter2D(Collider2D collision)       // funktioniert auch aber h‰sslich https://www.youtube.com/watch?v=RE0aWe7ByAI
+     {
+         if (collision.CompareTag("Enemy"))
+         {
+             TakeDamage(25);
+             Vector2 difference = transform.position - collision.transform.position;
+             transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
+         }
+     }*/
+
+     public IEnumerator Knockback(float knockDur, float knockbackPwr, Vector4 knockbackDir)    //von dem kleinen jungen aber man wird nicht nach rechts gestoﬂen sondern klatscht den gegner nach links https://www.youtube.com/watch?v=-dMtWZsjX6g
+     {
+         float timer = 0;
+
+         while(knockDur > timer)
+         {
+             timer += Time.deltaTime;
+
+             rb.AddForce(new Vector4(knockbackDir.x * -100, knockbackDir.y * -100, knockbackDir.x * knockbackPwr, transform.position.z));
+         }
+
+         yield return 0;
+     }
 }

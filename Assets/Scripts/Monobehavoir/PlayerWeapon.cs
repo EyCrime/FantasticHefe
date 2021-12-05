@@ -13,6 +13,10 @@ public class PlayerWeapon : MonoBehaviour
     public SignalObject hotWaterSignal;
     private bool isHotAmmo;
 
+    public float speed = 20f;
+
+    public bool directionRight;
+
     // Update is called once per frame
     void Update()
     {
@@ -36,17 +40,40 @@ public class PlayerWeapon : MonoBehaviour
 
     void ShootColdBullet()
     {
-        Instantiate(coldWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        GameObject coldBullet = Instantiate(coldWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        Rigidbody2D rbCold = coldBullet.GetComponent<Rigidbody2D>();
+        if (directionRight)
+        {
+            rbCold.velocity = -transform.right * speed;
+        }
+        else
+        {
+            rbCold.velocity = transform.right * speed;
+        }
         inventory.coldWater--;
         coldWaterSignal.Raise();
     }
-
+    
     void ShootHotBullet()
     {
-        Instantiate(hotWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        GameObject hotBullet = Instantiate(hotWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        Rigidbody2D rbHot = hotBullet.GetComponent<Rigidbody2D>();
+        if (directionRight)
+        {
+            rbHot.velocity = -transform.right* speed;
+        }
+        else
+        {
+            rbHot.velocity = transform.right * speed;
+        }
         inventory.hotWater--;
         hotWaterSignal.Raise();
     }
 
-    
+    public void ChangeDirection()
+    {
+        directionRight = !directionRight;
+
+     }
+
 }

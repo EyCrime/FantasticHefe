@@ -224,6 +224,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 5771595990000490223}
   m_CeilingCheck: {fileID: 5771595989296962076}
   m_CrouchDisableCollider: {fileID: 0}
+  directionSignal: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -249,6 +250,8 @@ MonoBehaviour:
   switchAmmoSignal: {fileID: 11400000, guid: 478d20ed8cdbd62479bc29dd19cafb49, type: 2}
   coldWaterSignal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
   hotWaterSignal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
+  speed: 20
+  directionRight: 0
 --- !u!50 &5771595989887656322
 Rigidbody2D:
   serializedVersion: 4
@@ -348,6 +351,10 @@ MonoBehaviour:
   scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
   CO2Signal: {fileID: 11400000, guid: 9c7cb1e3cd220a24b8476c03472d807a, type: 2}
   temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
+  force: 0
+  rb: {fileID: 0}
+  knockDur: 0
+  knockbackPwr: 0
 --- !u!61 &5256800419655555553
 BoxCollider2D:
   m_ObjectHideFlags: 0

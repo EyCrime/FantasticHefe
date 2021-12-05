@@ -12,7 +12,6 @@ public class PlayerBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.right * speed;
         Destroy(gameObject, expireTime);
     }
 
@@ -20,7 +19,6 @@ public class PlayerBullet : MonoBehaviour
     {
         if (!hitInfo.CompareTag("Player"))
         {
-
             Enemy enemy = hitInfo.GetComponent<Enemy>();
             if (enemy != null)
             {
@@ -29,6 +27,4 @@ public class PlayerBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }

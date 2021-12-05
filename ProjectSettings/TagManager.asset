@@ -7,6 +7,10 @@ TagManager:
   - Ground
   - Projectile
   - Enemy
+  - co2
+  - coldWater
+  - hotWater
+  - turn
   layers:
   - Default
   - TransparentFX

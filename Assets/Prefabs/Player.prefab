@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600170495072103048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0.15, y: 0, z: 0}
   m_LocalScale: {x: 0.134316, y: 0.134316, z: 0.19187997}
   m_Children: []
   m_Father: {fileID: 5771595989887656351}
@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 5771595989887656324}
   - component: {fileID: 8906437542960751725}
   - component: {fileID: 5256800419655555553}
+  - component: {fileID: 353889960}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -224,7 +225,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 5771595990000490223}
   m_CeilingCheck: {fileID: 5771595989296962076}
   m_CrouchDisableCollider: {fileID: 0}
-  directionSignal: {fileID: 0}
+  directionSignal: {fileID: 11400000, guid: bf9edae46ecdff3429c155fa58e5cf54, type: 2}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -351,10 +352,10 @@ MonoBehaviour:
   scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
   CO2Signal: {fileID: 11400000, guid: 9c7cb1e3cd220a24b8476c03472d807a, type: 2}
   temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
-  force: 0
-  rb: {fileID: 0}
-  knockDur: 0
-  knockbackPwr: 0
+  force: 20
+  rb: {fileID: 5771595989887656322}
+  knockDur: 0.02
+  knockbackPwr: 20
 --- !u!61 &5256800419655555553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -381,6 +382,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19699216, y: 0.2835773}
   m_EdgeRadius: 0
+--- !u!114 &353889960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771595989887656349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba1a939f9453394fa427befd25f9e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: bf9edae46ecdff3429c155fa58e5cf54, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2243963562953487847}
+        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
+        m_MethodName: ChangeDirection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5771595990000490222
 GameObject:
   m_ObjectHideFlags: 0

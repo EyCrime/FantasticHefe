@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject projectile;
 
+    public float dODBZN;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -45,18 +47,27 @@ public class Enemy : MonoBehaviour
     {
         distToPlayer = Vector2.Distance(transform.position, player.position);
 
+        
+
         if (distToPlayer >= range)
         {
             transform.Translate(2 * Time.deltaTime * speed, 0, 0);
         }
-
         else
         {
+            dODBZN = transform.position.x - player.position.x;
+
+            // When the player is right to the enemy the value is negative
+            if (dODBZN > 0 && !directionLeft || dODBZN < 0 && directionLeft)    
+            {
+                
+                Flip();
+            }
+
             if (timeBetweenShots <= 0)
             {
                 Instantiate(projectile, bulletSpawn.position, bulletSpawn.rotation);
                 timeBetweenShots = startTimeBetweenShots;
-
             }
             else
             {
@@ -84,7 +95,6 @@ public class Enemy : MonoBehaviour
         if (directionLeft)
         {
             slider.direction = Slider.Direction.RightToLeft;
-
         }
         else
         {

@@ -6,6 +6,11 @@ public class EnemyProjectile : MonoBehaviour
 {
     public float speed;
     public int damage = 25;
+    public float range;
+    public Vector2 startPosition;
+    public Vector2 endPosition;
+
+    public Rigidbody2D rb;
 
     private Transform player;
     private Vector2 target;
@@ -13,24 +18,43 @@ public class EnemyProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPosition = transform.position;
+        endPosition = startPosition * range;
+
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
             target = new Vector2(player.position.x, player.position.y);
-        }      
+
+        }
+
+         rb.AddForce((target - startPosition).normalized * speed , ForceMode2D.Impulse);
+
+       // transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Vector2.Distance(transform.position, player.position);
+
+        
         if (player != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            
+          //transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+           // Debug.Log(Vector2.Distance(startPosition, transform.position));
+            //Debug.Log("yalllaaa" + Vector2.Distance(startPosition, endPosition));
 
-            if (transform.position.x == target.x && transform.position.y == target.y)
+            if (Vector2.Distance(startPosition, transform.position) > Vector2.Distance(startPosition, endPosition))
             {
                 DestroyProjectile();
             }
+
+           /* if (transform.position.x == target.x && transform.position.y == target.y)
+            {
+                DestroyProjectile();
+            }*/
         }
     }
 
@@ -41,7 +65,7 @@ public class EnemyProjectile : MonoBehaviour
             DestroyProjectile();
         }
 
-        if (!hitInfo.CompareTag("Enemy"))
+        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("turn"))
         {
 
             Player player = hitInfo.GetComponent<Player>();
@@ -49,7 +73,7 @@ public class EnemyProjectile : MonoBehaviour
             {
                 player.TakeDamage(damage);
             }
-            Destroy(gameObject);
+            DestroyProjectile();
         }
     }
 

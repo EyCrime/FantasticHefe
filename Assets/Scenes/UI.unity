@@ -568,6 +568,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1918084237}
   victoryMenuUI: {fileID: 1384491897}
+  playerInventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  scoreUI: {fileID: 773983642}
+  timer: {fileID: 11400000, guid: 7ce3c01406e790342a11d8224ccc21b9, type: 2}
 --- !u!1 &536706478
 GameObject:
   m_ObjectHideFlags: 0

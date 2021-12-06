@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class InGameMenu : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenuUI;
-    [SerializeField] GameObject victoryMenuUI;
+    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject victoryMenuUI;
+    [SerializeField] private Inventory playerInventory;
+    [SerializeField] private TextMeshProUGUI scoreUI;
+    [SerializeField] private Timer timer;
 
     private bool gameIsActive = true;
     private bool gameIsFinished;
@@ -14,7 +18,7 @@ public class InGameMenu : MonoBehaviour
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Escape) && !gameIsFinished)
         {
-            PauseOrResume(gameIsActive);
+            PauseOrResume();
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -22,16 +26,16 @@ public class InGameMenu : MonoBehaviour
         }
     }
 
-    public void PauseOrResume(bool gameIsActive)
+    public void PauseOrResume()
     {
         pauseMenuUI.SetActive(gameIsActive);
         Time.timeScale = gameIsActive ? 0f : 1f;
-        this.gameIsActive = !gameIsActive;
+        gameIsActive = !gameIsActive;
     }
 
     public void LoadMainMenu ()
     {
-        this.gameIsActive = false;
+        gameIsActive = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         gameIsFinished = false;
@@ -39,9 +43,10 @@ public class InGameMenu : MonoBehaviour
 
     public void LoadVictoryMenu ()
     {
-        victoryMenuUI.SetActive(gameIsActive);
-        Time.timeScale = gameIsActive ? 0f : 1f;
-        this.gameIsActive = !gameIsActive;
+        scoreUI.text = "" + calcFinalScore();
+        victoryMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        gameIsActive = false;
         gameIsFinished = true;
     }
 
@@ -58,4 +63,9 @@ public class InGameMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         gameIsFinished = false;
     }
+
+    private int calcFinalScore()
+    {
+        return playerInventory.score + (int)(timer.currentTime) * 10;
+    } 
 }

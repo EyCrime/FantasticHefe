@@ -1625,6 +1625,7 @@ GameObject:
   - component: {fileID: 4380775589836409429}
   - component: {fileID: 4380775589836409451}
   - component: {fileID: 4380775589836409428}
+  - component: {fileID: 592157696}
   m_Layer: 5
   m_Name: DamagePane
   m_TagString: Untagged
@@ -1689,6 +1690,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &592157696
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380775589836409430}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6700efff24feabe45877aa5dd4f7fd0d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4380775589862022975
 GameObject:
   m_ObjectHideFlags: 0

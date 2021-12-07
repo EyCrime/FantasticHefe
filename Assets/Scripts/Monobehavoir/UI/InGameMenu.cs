@@ -8,6 +8,7 @@ public class InGameMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject victoryMenuUI;
+    [SerializeField] private GameObject gameOverMenuUI;
     [SerializeField] private Inventory playerInventory;
     [SerializeField] private TextMeshProUGUI scoreUI;
     [SerializeField] private Timer timer;
@@ -20,9 +21,13 @@ public class InGameMenu : MonoBehaviour
         {
             PauseOrResume();
         }
-        else if (Input.GetKeyDown(KeyCode.Return))
+        else if(Input.GetKeyDown(KeyCode.Return))
         {
-            LoadVictoryMenu();
+            LoadScreen(true);
+        }
+        else if(Input.GetKeyDown(KeyCode.P))
+        {
+            LoadScreen(false);
         }
     }
 
@@ -33,7 +38,7 @@ public class InGameMenu : MonoBehaviour
         gameIsActive = !gameIsActive;
     }
 
-    public void LoadMainMenu ()
+    public void LoadMainMenu()
     {
         gameIsActive = false;
         Time.timeScale = 1f;
@@ -41,16 +46,21 @@ public class InGameMenu : MonoBehaviour
         gameIsFinished = false;
     }
 
-    public void LoadVictoryMenu ()
+    public void LoadScreen(bool isVictory)
     {
         scoreUI.text = "" + calcFinalScore();
-        victoryMenuUI.SetActive(true);
+        
+        if(isVictory)
+            victoryMenuUI.SetActive(true);
+        else
+            gameOverMenuUI.SetActive(true);
+
         Time.timeScale = 0f;
         gameIsActive = false;
         gameIsFinished = true;
     }
 
-    public void QuitGame ()
+    public void QuitGame()
     {
         Debug.Log("QUIT");
         Application.Quit();

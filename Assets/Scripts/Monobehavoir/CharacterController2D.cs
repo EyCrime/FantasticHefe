@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 public class CharacterController2D : MonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
@@ -21,9 +23,9 @@ public class CharacterController2D : MonoBehaviour
 
 	public int jumps = 0;
 
-	public int co2=0;
+	public float co2 = 50;
 
-	private float jetpackForce=5f;
+	public float jetpackForce=7.5f;
 
 	[Header("Events")]
 	[Space]
@@ -129,6 +131,7 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
+		Debug.Log(jumps);
 		// If the player should jump...
 		if (jump && jumps == 0)
 		{
@@ -137,31 +140,29 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			jumps++;
 		}
-		else if (jump && jumps == 1)
-		{
-			// Add a vertical force to the player.
-			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce-100f));
-			jumps++;
-		}
-		else if(fly && jumps == 2 && co2 == 0)
+		//else if (jump && jumps == 1 && co2!=0)
+		//{
+			//Debug.Log("2");// Add a vertical force to the player.
+			//m_Grounded = false;
+		//	m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce-100f));
+			//jumps++;
+		//}
+		else if(fly && jumps == 2 && co2!=0)
 		{
 		if(fly){
 			m_Grounded = false;
-			jetpackForce += 0.25f;
+			jetpackForce += 0.3f;
 			m_Rigidbody2D.AddForce(Vector2.up * jetpackForce);
+			co2 -= 0.25f;
+			jumps=2;
 		}
-		else if(!fly){
-			m_Grounded = false;
-			jetpackForce = jetpackForce - 2f;
 		}
-		} 
-		else if (jumps >= 2 && m_Grounded==true)
+		else if (m_Grounded==true)
 		{
 			jumps=0;
-			jetpackForce=0;
 		}
 	}
+			
 
 
 	private void Flip()

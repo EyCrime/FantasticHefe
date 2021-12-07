@@ -21,6 +21,10 @@ public class CharacterController2D : MonoBehaviour
 
 	public int jumps = 0;
 
+	public int co2=0;
+
+	private float jetpackForce=5f;
+
 	[Header("Events")]
 	[Space]
 
@@ -63,7 +67,7 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool crouch, bool jump)
+	public void Move(float move, bool crouch, bool jump, bool fly)
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -126,15 +130,36 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (jump && jumps < 2)
+		if (jump && jumps == 0)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			jumps++;
-		} else if (jumps >= 2 && m_Grounded==true)
+		}
+		else if (jump && jumps == 1)
+		{
+			// Add a vertical force to the player.
+			m_Grounded = false;
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce-100f));
+			jumps++;
+		}
+		else if(fly && jumps == 2 && co2 == 0)
+		{
+		if(fly){
+			m_Grounded = false;
+			jetpackForce += 0.25f;
+			m_Rigidbody2D.AddForce(Vector2.up * jetpackForce);
+		}
+		else if(!fly){
+			m_Grounded = false;
+			jetpackForce = jetpackForce - 2f;
+		}
+		} 
+		else if (jumps >= 2 && m_Grounded==true)
 		{
 			jumps=0;
+			jetpackForce=0;
 		}
 	}
 

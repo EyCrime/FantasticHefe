@@ -134,7 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65223b2830d60b478d389516e560eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expireTime: 0.4
   speed: 20
   damage: 25
   rb: {fileID: 8818128758162697874}
+  startPosition: {x: 0, y: 0}
+  endPosition: {x: 0, y: 0}
+  range: 2

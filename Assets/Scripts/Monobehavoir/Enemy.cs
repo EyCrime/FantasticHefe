@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
 
     public Slider slider;
 
+    Animator animation;
+
     private float distToPlayer;
     public Transform player;
 
@@ -42,20 +44,22 @@ public class Enemy : MonoBehaviour
         healthBar.SetMaxHealth(health);
 
         slider = GetComponentInChildren<Slider>();
+
+        animation = GetComponent<Animator>();
     }
     void Update()
     {
         distToPlayer = Vector2.Distance(transform.position, player.position);
 
-        
-
         if (distToPlayer >= range)
         {
+            animation.Play("HotEnemyMovement");
             transform.Translate(2 * Time.deltaTime * speed, 0, 0);
         }
         else
         {
-            dODBZN = transform.position.x - player.position.x;
+            dODBZN = transform.position.x - player.position.x;  // direction ohne den betrag zu nehmen
+            animation.Play("HotEnemyIdle");
 
             // When the player is right to the enemy the value is negative
             if (dODBZN > 0 && !directionLeft || dODBZN < 0 && directionLeft)    

@@ -23,7 +23,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public bool isOkaytoFly = false;
 
-	public float co2 = 50;
+	public Inventory inventory;
+	public SignalObject co2Signal; 
 
 	public float jetpackForce=7.5f;
 
@@ -138,18 +139,19 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			isOkaytoFly = false;
 		}
-		else if (jump && !m_Grounded && 0<co2)
+		else if (jump && !m_Grounded && 0<inventory.currentCO2)
 		{
 			// Add a vertical force to the player.
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce-150f));
 			isOkaytoFly = true;
 		}
-		else if(fly && co2>0 && isOkaytoFly)
+		else if(fly && inventory.currentCO2>0 && isOkaytoFly)
 		{
 			// Add a vertical force to the player.
 			m_Rigidbody2D.AddForce(Vector2.up * jetpackForce);
 			jetpackForce += 0.3f;
-			co2 -= 0.25f;
+			inventory.currentCO2 -= 1;
+			co2Signal.Raise();
 			isOkaytoFly=true;
 		}
 		else

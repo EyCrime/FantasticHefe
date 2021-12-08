@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   maxHealth: 3
-  currentHealth: 1
-  coldWater: 4
-  hotWater: 4
+  currentHealth: 3
+  coldWater: 2
+  hotWater: 2
   score: 0
-  maxCO2: 5
-  currentCO2: 1
+  maxCO2: 1000
+  currentCO2: 1000

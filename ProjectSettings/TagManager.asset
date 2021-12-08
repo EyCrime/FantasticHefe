@@ -7,6 +7,12 @@ TagManager:
   - Ground
   - Projectile
   - Enemy
+  - co2
+  - coldWater
+  - hotWater
+  - Ladder
+  - DieFloor
+  - Plattform
   layers:
   - Default
   - TransparentFX
@@ -41,6 +47,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3435131837
+    locked: 0
+  - name: Map
+    uniqueID: 2578067891
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

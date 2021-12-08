@@ -25,36 +25,19 @@ public class EnemyProjectile : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
             target = new Vector2(player.position.x, player.position.y);
-
+            rb.AddForce((target - startPosition).normalized * speed, ForceMode2D.Impulse);
         }
-
-         rb.AddForce((target - startPosition).normalized * speed , ForceMode2D.Impulse);
-
-       // transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        // Vector2.Distance(transform.position, player.position);
-
-        
+    {     
         if (player != null)
         {
-            
-          //transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-           // Debug.Log(Vector2.Distance(startPosition, transform.position));
-            //Debug.Log("yalllaaa" + Vector2.Distance(startPosition, endPosition));
-
             if (Vector2.Distance(startPosition, transform.position) > Vector2.Distance(startPosition, endPosition))
             {
                 DestroyProjectile();
             }
-
-           /* if (transform.position.x == target.x && transform.position.y == target.y)
-            {
-                DestroyProjectile();
-            }*/
         }
     }
 

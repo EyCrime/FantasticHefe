@@ -393,7 +393,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4496840617003434689}
   - component: {fileID: 4496840617003434558}
-  - component: {fileID: 4496840617003434688}
   - component: {fileID: 3997102366535294857}
   - component: {fileID: 4496840617003434691}
   - component: {fileID: 1582482083}
@@ -472,32 +471,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4496840617003434688
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4496840617003434559}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2}
-  m_EdgeRadius: 0
 --- !u!50 &3997102366535294857
 Rigidbody2D:
   serializedVersion: 4
@@ -539,6 +512,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 3440643471777572065}
   player: {fileID: 5771595989887656349, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
   playerScript: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+  rb: {fileID: 0}
   inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
   scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
   temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
@@ -547,7 +521,7 @@ MonoBehaviour:
   slider: {fileID: 0}
   healthBar: {fileID: 4496840616679566239}
   startTimeBetweenShots: 2
-  projectile: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
+  projectilePrefab: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
   dODBZN: 0
 --- !u!61 &1582482083
 BoxCollider2D:

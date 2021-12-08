@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public float knockDur;
-    public float knockbackPwr;
+   // public float knockDur;
+    //public float knockbackPwr;
 
 
     // Start is called before the first frame update
@@ -63,12 +63,16 @@ public class Player : MonoBehaviour
          if (collision.CompareTag("Enemy")) 
          {
             TakeDamage(25);
+            Vector3 pushDirection = collision.transform.position - transform.position;
 
-            StartCoroutine(Knockback(knockDur, knockbackPwr, transform.position));
-         }
+            pushDirection = -pushDirection.normalized;
+
+            GetComponent<Rigidbody2D>().AddForce(pushDirection * force * 100);
+            // StartCoroutine(Knockback(knockDur, knockbackPwr, transform.position));
+        }
      }
 
-    /*void OnTriggerEnter2D(Collider2D collision)         //sieht clean aus aber man fliegt hoch https://www.youtube.com/watch?v=lGUPG7smpXo
+    /*void OnTriggerEnter2D(Collider2D collision)        HAB DAS GENOMMEN YALLLAAAA //sieht clean aus aber man fliegt hoch https://www.youtube.com/watch?v=lGUPG7smpXo
     {
         if (collision.CompareTag("Enemy"))
         {
@@ -92,7 +96,7 @@ public class Player : MonoBehaviour
          }
      }*/
 
-     public IEnumerator Knockback(float knockDur, float knockbackPwr, Vector4 knockbackDir)    //von dem kleinen jungen aber man wird nicht nach rechts gestoﬂen sondern klatscht den gegner nach links https://www.youtube.com/watch?v=-dMtWZsjX6g
+    /* public IEnumerator Knockback(float knockDur, float knockbackPwr, Vector4 knockbackDir)    //von dem kleinen jungen aber man wird nicht nach rechts gestoﬂen sondern klatscht den gegner nach links https://www.youtube.com/watch?v=-dMtWZsjX6g
      {
          float timer = 0;
 
@@ -104,5 +108,5 @@ public class Player : MonoBehaviour
          }
 
          yield return 0;
-     }
+     }*/
 }

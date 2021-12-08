@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     public GameObject player;
     public Player playerScript;
 
+    public Rigidbody2D rb;
+
     [SerializeField] private Inventory inventory;
     [SerializeField] private SignalObject scoreSignal;
     [SerializeField] private SignalObject temperatureSignal;
@@ -39,12 +41,13 @@ public class Enemy : MonoBehaviour
     private float timeBetweenShots;
     public float startTimeBetweenShots;
 
-    public GameObject projectile;
+    public GameObject projectilePrefab;
 
     public float dODBZN;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
         playerScript = player.GetComponent<Player>();
@@ -64,24 +67,45 @@ public class Enemy : MonoBehaviour
 
         if (distToPlayer >= range)
         {
-            animation.Play("HotEnemyMovement");
+            if (type == EnemyType.HotEnemy)
+            {
+                animation.Play("HotEnemyMovement");
+            }
+            else if (type == EnemyType.ColdEnemy)
+            {
+                animation.Play("ColdEnemyMovement");
+            }
+                
             transform.Translate(2 * Time.deltaTime * speed, 0, 0);
         }
         else
         {
             dODBZN = transform.position.x - player.transform.position.x;  // direction ohne den betrag zu nehmen
-            animation.Play("HotEnemyIdle");
+
+            if (type == EnemyType.HotEnemy)
+            {
+                animation.Play("HotEnemyIdle");
+            }
+            else if (type == EnemyType.ColdEnemy)
+            {
+                animation.Play("ColdEnemyIdle");
+            }
 
             // When the player is right to the enemy the value is negative
             if (dODBZN > 0 && !directionLeft || dODBZN < 0 && directionLeft)    
-            {
-                
+            {              
                 Flip();
             }
 
             if (timeBetweenShots <= 0)
             {
-                Instantiate(projectile, bulletSpawn.position, bulletSpawn.rotation);
+                if(player.activeInHierarchy) { 
+                    GameObject projectile = Instantiate(projectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
+                    Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();
+                    Vector2 startPosition = projectile.transform.position;
+                    Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
+                    rbProjectile.AddForce((target - startPosition).normalized * speed, ForceMode2D.Impulse);
+                }
                 timeBetweenShots = startTimeBetweenShots;
             }
             else
@@ -91,12 +115,22 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D trig)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (trig.gameObject.CompareTag("Turn"))
+        if (collision.gameObject.CompareTag("Turn"))
         {
             Flip();
         }
+        else if (collision.CompareTag("Player"))
+        {
+            rb.bodyType = RigidbodyType2D.Static;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     private void Flip()
@@ -181,24 +215,22 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        if ((temperature.current > temperature.min) && (temperature.current < temperature.max))
+        if (type == EnemyType.HotEnemy)
         {
-            if (type == EnemyType.HotEnemy)
-            {
-                temperature.current--;
-                temperatureSignal.Raise();
-            }
-            else if (type == EnemyType.ColdEnemy)
-            {
-                temperature.current++;
-                temperatureSignal.Raise();
-            }
+            temperature.current--;
+            temperatureSignal.Raise();
         }
-        else
+        else if (type == EnemyType.ColdEnemy)
+        {
+            temperature.current++;
+            temperatureSignal.Raise();
+        }
+
+        if ((temperature.current <= temperature.min) || (temperature.current >= temperature.max))
         {
             playerScript.Die();
         }
-                
+     
         inventory.score += 20;
         scoreSignal.Raise();
         Destroy(gameObject);

@@ -13,6 +13,8 @@ public class PlayerBullet : MonoBehaviour
     public Vector2 endPosition;
     public float range;
 
+    [SerializeField] private BulletType bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +32,17 @@ public class PlayerBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)               // wenn man die Methode auskommentiert, fliegt die kugel wieder oder man verschiebt im editor den bulletspawn wtf
     {
-        if (!hitInfo.CompareTag("Player"))
-        {
+        if (!hitInfo.CompareTag("Player") && !hitInfo.CompareTag("Turn"))
+        {   
             Enemy enemy = hitInfo.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                if ((bullet == BulletType.HotBullet && enemy.type == EnemyType.ColdEnemy) || (bullet == BulletType.ColdBullet && enemy.type == EnemyType.HotEnemy))
+                {
+                    enemy.TakeDamage(damage);
+                }
             }
+
             Destroy(gameObject);
         }
     }
@@ -45,4 +51,9 @@ public class PlayerBullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+}
+
+public enum BulletType
+{
+    HotBullet, ColdBullet
 }

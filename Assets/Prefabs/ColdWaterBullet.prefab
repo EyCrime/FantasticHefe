@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3654588080346644695}
   m_Layer: 0
   m_Name: ColdWaterBullet
-  m_TagString: Projectile
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,3 +140,4 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   endPosition: {x: 0, y: 0}
   range: 2
+  bullet: 1

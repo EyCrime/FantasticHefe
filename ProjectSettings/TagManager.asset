@@ -5,12 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Projectile
   - Enemy
   - co2
   - coldWater
   - hotWater
-  - turn
+  - Turn
+  - PlayerBullet
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX

@@ -13,12 +13,17 @@ public class Enemy : MonoBehaviour
 
     public Transform bulletSpawn;
 
+    public Transform player;
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private SignalObject scoreSignal;
+
+    [SerializeField] public EnemyType type;
+
     public Slider slider;
 
     Animator animation;
 
     private float distToPlayer;
-    public Transform player;
 
     //  public float speed;
     //public float stoppingDistance;
@@ -82,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D trig)
     {
-        if (trig.gameObject.CompareTag("turn"))
+        if (trig.gameObject.CompareTag("Turn"))
         {
             Flip();
         }
@@ -158,7 +163,7 @@ public class Enemy : MonoBehaviour
     }*/
 
     public void TakeDamage(int damage)
-    {
+    { 
         health -= damage;
         healthBar.SetHealth(health);
 
@@ -170,7 +175,13 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        inventory.score += 20;
+        scoreSignal.Raise();
         Destroy(gameObject);
-    }
-    
+    }  
+}
+
+public enum EnemyType
+{
+    HotEnemy, ColdEnemy
 }

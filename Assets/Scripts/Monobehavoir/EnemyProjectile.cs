@@ -60,20 +60,17 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.CompareTag("Player") || hitInfo.CompareTag("Projectile"))
+        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("Turn"))
         {
-            DestroyProjectile();
-        }
-
-        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("turn"))
-        {
-
-            Player player = hitInfo.GetComponent<Player>();
-            if (player != null && hitInfo.isTrigger)
+            if (hitInfo.CompareTag("Player") || hitInfo.CompareTag("PlayerBullet"))
             {
-                player.TakeDamage(damage);
+                Player player = hitInfo.GetComponent<Player>();
+                if (player != null && hitInfo.isTrigger)
+                {
+                    player.TakeDamage(damage);
+                }
+                DestroyProjectile();
             }
-            DestroyProjectile();
         }
     }
 

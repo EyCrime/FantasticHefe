@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max: 10
   min: 0
-  current: 0
+  current: 5
   normal: 5

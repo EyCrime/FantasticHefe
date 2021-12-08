@@ -15,13 +15,13 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-	private bool m_Grounded;            // Whether or not the player is grounded.
+	public bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	public int jumps = 0;
+	public bool isOkaytoFly = false;
 
 	public float co2 = 50;
 
@@ -131,35 +131,30 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
-		Debug.Log(jumps);
 		// If the player should jump...
-		if (jump && jumps == 0)
+		if (jump && m_Grounded)
 		{
 			// Add a vertical force to the player.
-			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-			jumps++;
+			isOkaytoFly = false;
 		}
-		//else if (jump && jumps == 1 && co2!=0)
-		//{
-			//Debug.Log("2");// Add a vertical force to the player.
-			//m_Grounded = false;
-		//	m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce-100f));
-			//jumps++;
-		//}
-		else if(fly && jumps == 2 && co2!=0)
+		else if (jump && !m_Grounded && 0<co2)
 		{
-		if(fly){
-			m_Grounded = false;
-			jetpackForce += 0.3f;
+			// Add a vertical force to the player.
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce-150f));
+			isOkaytoFly = true;
+		}
+		else if(fly && co2>0 && isOkaytoFly)
+		{
+			// Add a vertical force to the player.
 			m_Rigidbody2D.AddForce(Vector2.up * jetpackForce);
+			jetpackForce += 0.3f;
 			co2 -= 0.25f;
-			jumps=2;
+			isOkaytoFly=true;
 		}
-		}
-		else if (m_Grounded==true)
+		else
 		{
-			jumps=0;
+			isOkaytoFly=false;
 		}
 	}
 			

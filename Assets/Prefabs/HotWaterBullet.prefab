@@ -141,3 +141,6 @@ MonoBehaviour:
   endPosition: {x: 0, y: 0}
   range: 2
   bullet: 0
+  temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
+  temperature: {fileID: 11400000, guid: d70c8404d7089894b8ce25555e9db0b6, type: 2}
+  player: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}

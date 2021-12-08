@@ -37,13 +37,14 @@ public class PlayerBullet : MonoBehaviour
             Enemy enemy = hitInfo.GetComponent<Enemy>();
             if (enemy != null)
             {
-                if ((bullet == BulletType.HotBullet && enemy.type == EnemyType.ColdEnemy) || (bullet == BulletType.ColdBullet && enemy.type == EnemyType.HotEnemy))
+                if ((bullet == BulletType.HotBullet && enemy.type == EnemyType.ColdEnemy) || (bullet == BulletType.ColdBullet && enemy.type == EnemyType.HotEnemy)) 
                 {
                     enemy.TakeDamage(damage);
+                    
                 }
-            }
 
-            Destroy(gameObject);
+            }
+            DestroyBullet();
         }
     }
 

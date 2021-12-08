@@ -13,9 +13,13 @@ public class Enemy : MonoBehaviour
 
     public Transform bulletSpawn;
 
-    public Transform player;
+    public GameObject player;
+    public Player playerScript;
+
     [SerializeField] private Inventory inventory;
     [SerializeField] private SignalObject scoreSignal;
+    [SerializeField] private SignalObject temperatureSignal;
+    [SerializeField] private Temperature temperature;
 
     [SerializeField] public EnemyType type;
 
@@ -41,7 +45,9 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        playerScript = player.GetComponent<Player>();
 
         timeBetweenShots = startTimeBetweenShots;
 
@@ -54,7 +60,7 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        distToPlayer = Vector2.Distance(transform.position, player.position);
+        distToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (distToPlayer >= range)
         {
@@ -63,7 +69,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            dODBZN = transform.position.x - player.position.x;  // direction ohne den betrag zu nehmen
+            dODBZN = transform.position.x - player.transform.position.x;  // direction ohne den betrag zu nehmen
             animation.Play("HotEnemyIdle");
 
             // When the player is right to the enemy the value is negative
@@ -175,6 +181,24 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        if ((temperature.current > temperature.min) && (temperature.current < temperature.max))
+        {
+            if (type == EnemyType.HotEnemy)
+            {
+                temperature.current--;
+                temperatureSignal.Raise();
+            }
+            else if (type == EnemyType.ColdEnemy)
+            {
+                temperature.current++;
+                temperatureSignal.Raise();
+            }
+        }
+        else
+        {
+            playerScript.Die();
+        }
+                
         inventory.score += 20;
         scoreSignal.Raise();
         Destroy(gameObject);

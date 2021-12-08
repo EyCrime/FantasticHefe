@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Die()
+   public void Die()
     {
         gameObject.SetActive(false);
         stopTimerSignal.Raise();

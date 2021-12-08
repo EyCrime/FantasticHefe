@@ -396,8 +396,6 @@ GameObject:
   - component: {fileID: 4496840617003434688}
   - component: {fileID: 3997102366535294857}
   - component: {fileID: 4496840617003434691}
-  - component: {fileID: 1438537893974766070}
-  - component: {fileID: -3576848131733697620}
   - component: {fileID: 1582482083}
   - component: {fileID: 1683999236}
   m_Layer: 0
@@ -539,47 +537,18 @@ MonoBehaviour:
   range: 8
   directionLeft: 0
   bulletSpawn: {fileID: 3440643471777572065}
+  player: {fileID: 5771595989887656349, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+  playerScript: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+  inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
+  temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
+  temperature: {fileID: 11400000, guid: d70c8404d7089894b8ce25555e9db0b6, type: 2}
+  type: 0
   slider: {fileID: 0}
-  player: {fileID: 0}
   healthBar: {fileID: 4496840616679566239}
   startTimeBetweenShots: 2
   projectile: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
   dODBZN: 0
---- !u!114 &1438537893974766070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4496840617003434559}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12a98a32dfe4a29448e29df62adbdae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  range: 15
-  moveRight: 0
-  player: {fileID: 0}
---- !u!114 &-3576848131733697620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4496840617003434559}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b161eef18667e0c4895da3a7a890eb4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mustPatrol: 0
-  walkSpeed: 100
-  rb: {fileID: 3997102366535294857}
-  groundCheckPos: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!61 &1582482083
 BoxCollider2D:
   m_ObjectHideFlags: 0

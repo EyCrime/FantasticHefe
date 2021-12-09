@@ -28,7 +28,8 @@ public class CharacterController2D : MonoBehaviour
 	public Inventory inventory;
 	public SignalObject co2Signal; 
 
-	public float jetpackForce=7.5f;
+	public float jetpackForce=60f;
+	public int jumps = 0;
 	public float jetpackForceAdder=0.05f;
 
 	[Header("Events")]
@@ -135,6 +136,18 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
+
+		if(jumps>0)
+			{
+			jump=false;
+			isOkaytoFly=true;
+			if(m_Grounded)
+			{
+			jumps=0;
+			isOkaytoFly=false;
+			}
+			}
+
 		// If the player should jump...
 		if (jump && m_Grounded)
 		{
@@ -146,9 +159,9 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce-150f));
-			isOkaytoFly = true;
+			jumps++;
 		}
-		else if(fly && inventory.currentCO2>0 && isOkaytoFly)
+		else if(fly && inventory.currentCO2>0 && !m_Grounded && isOkaytoFly)
 		{
 			// Add a vertical force to the player.
 			m_Rigidbody2D.AddForce(Vector2.up * jetpackForce);
@@ -156,9 +169,14 @@ public class CharacterController2D : MonoBehaviour
 			inventory.currentCO2 -= 1;
 			co2Signal.Raise();
 			isOkaytoFly=true;
+			if(jetpackForce>60f)
+			{
+				jetpackForce=60f;
+			}
 		}
 		else
 		{
+			jetpackForce = 60f;
 			isOkaytoFly=false;
 		}
 	}

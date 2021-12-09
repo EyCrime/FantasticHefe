@@ -14,8 +14,13 @@ public class PlayerMovement2D : MonoBehaviour
     bool jump = false;
 
     bool fly=false;
+    ParticleSystem ps;
 
     // Update is called once per frame
+   void Awake()
+   {
+       ps=GetComponentInChildren<ParticleSystem>();
+   }
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -24,10 +29,12 @@ public class PlayerMovement2D : MonoBehaviour
         {
             jump=true;
             fly=true;
+            ps.Play();
         }
         else if(Input.GetButtonUp("Jump"))
         {
             fly=false;
+            ps.Stop();
         }
     }
 

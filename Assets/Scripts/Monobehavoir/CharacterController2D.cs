@@ -27,6 +27,7 @@ public class CharacterController2D : MonoBehaviour
 	public int jumps = 0;
 	public float jetpackForceAdder=.5f;
 
+
 	[Header("Events")]
 	[Space]
 
@@ -103,6 +104,7 @@ public class CharacterController2D : MonoBehaviour
 		if(!fly && !m_Grounded)
 			{
 				jetpackForce=0;
+				
 			}
 
 		// If the player should jump...
@@ -121,6 +123,7 @@ public class CharacterController2D : MonoBehaviour
 		else if(fly && inventory.currentCO2>0 && !m_Grounded && isOkaytoFly)
 		{
 			// Add a vertical force to the player.
+			
 			m_Rigidbody2D.AddForce(Vector2.up * jetpackForce);
 			jetpackForce += jetpackForceAdder;
 			inventory.currentCO2 -= 1;

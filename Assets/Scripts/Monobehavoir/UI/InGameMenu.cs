@@ -21,14 +21,6 @@ public class InGameMenu : MonoBehaviour
         {
             PauseOrResume();
         }
-        else if(Input.GetKeyDown(KeyCode.Return))
-        {
-            LoadScreen(true);
-        }
-        else if(Input.GetKeyDown(KeyCode.P))
-        {
-            LoadScreen(false);
-        }
     }
 
     public void PauseOrResume()

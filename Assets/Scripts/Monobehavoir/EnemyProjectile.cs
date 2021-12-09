@@ -6,6 +6,11 @@ public class EnemyProjectile : MonoBehaviour
 {
     public float speed;
     public int damage = 25;
+    public float range;
+    public Vector2 startPosition;
+    public Vector2 endPosition;
+
+    public Rigidbody2D rb;
 
     private Transform player;
     private Vector2 target;
@@ -13,21 +18,23 @@ public class EnemyProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPosition = transform.position;
+        endPosition = startPosition * range;
+
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
             target = new Vector2(player.position.x, player.position.y);
-        }      
+            rb.AddForce((target - startPosition).normalized * speed, ForceMode2D.Impulse);
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {     
         if (player != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-            if (transform.position.x == target.x && transform.position.y == target.y)
+            if (Vector2.Distance(startPosition, transform.position) > Vector2.Distance(startPosition, endPosition))
             {
                 DestroyProjectile();
             }
@@ -36,20 +43,17 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.CompareTag("Player") || hitInfo.CompareTag("Projectile"))
+        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("Turn"))
         {
-            DestroyProjectile();
-        }
-
-        if (!hitInfo.CompareTag("Enemy"))
-        {
-
-            Player player = hitInfo.GetComponent<Player>();
-            if (player != null && hitInfo.isTrigger)
+            if (hitInfo.CompareTag("Player") || hitInfo.CompareTag("PlayerBullet"))
             {
-                player.TakeDamage(damage);
+                Player player = hitInfo.GetComponent<Player>();
+                if (player != null && hitInfo.isTrigger)
+                {
+                    player.TakeDamage(damage);
+                }
+                DestroyProjectile();
             }
-            Destroy(gameObject);
         }
     }
 

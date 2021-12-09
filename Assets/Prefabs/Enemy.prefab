@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4042617480739205509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3440643471777572065}
+  m_Layer: 0
+  m_Name: EnemyBulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3440643471777572065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042617480739205509}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.57, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4496840617003434689}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4496840615911352912
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,12 +137,12 @@ RectTransform:
   m_Children:
   - {fileID: 4496840616679566237}
   m_Father: {fileID: 4496840617003434689}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 1.26}
-  m_SizeDelta: {x: 699.6, y: 411.6}
+  m_SizeDelta: {x: 10, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4496840616344612382
 Canvas:
@@ -363,8 +393,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4496840617003434689}
   - component: {fileID: 4496840617003434558}
-  - component: {fileID: 4496840617003434688}
+  - component: {fileID: 3997102366535294857}
   - component: {fileID: 4496840617003434691}
+  - component: {fileID: 1582482083}
+  - component: {fileID: 1683999236}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -381,8 +413,9 @@ Transform:
   m_GameObject: {fileID: 4496840617003434559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: -0.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3440643471777572065}
   - {fileID: 4496840616344612385}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -427,7 +460,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: -7529469554864653123, guid: ae9af7015413a204aa5676246a8e754a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -438,32 +471,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4496840617003434688
-BoxCollider2D:
+--- !u!50 &3997102366535294857
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4496840617003434559}
-  m_Enabled: 1
-  m_Density: 1
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2}
-  m_EdgeRadius: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!114 &4496840617003434691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,8 +507,64 @@ MonoBehaviour:
   health: 75
   currentHealth: 75
   speed: 1
-  stoppingDistance: 7
+  range: 8
+  directionLeft: 0
+  bulletSpawn: {fileID: 3440643471777572065}
+  player: {fileID: 5771595989887656349, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+  playerScript: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+  rb: {fileID: 0}
+  inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
+  temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
+  temperature: {fileID: 11400000, guid: d70c8404d7089894b8ce25555e9db0b6, type: 2}
+  type: 0
+  slider: {fileID: 0}
   healthBar: {fileID: 4496840616679566239}
-  startTimeBetweenShots: 3
-  projectile: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
-  player: {fileID: 5771595989887656351, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+  startTimeBetweenShots: 2
+  projectilePrefab: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
+  dODBZN: 0
+--- !u!61 &1582482083
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496840617003434559}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 545f9a4ad5d328141998221af55812b5, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.17311764, y: -0.14379293}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5417767, y: 1.722052}
+  m_EdgeRadius: 0
+--- !u!95 &1683999236
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496840617003434559}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3fd7c65c0bbfdfb4a9b8cca61226d55c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

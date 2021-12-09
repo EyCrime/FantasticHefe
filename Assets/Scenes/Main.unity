@@ -201,9 +201,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434558, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496840617003434558, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1320646922429644957, guid: d29e42d54972b554eb855b5037a13270, type: 3}
+      objectReference: {fileID: 4068664785373503087, guid: d18fe44d10256a74c9076c604aa1bf4a, type: 3}
     - target: {fileID: 4496840617003434559, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_Name
       value: ColdEnemy
@@ -815,6 +819,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3163689465916933541, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
+      propertyPath: ingameMusic
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
 --- !u!1 &1659357013
@@ -1229,6 +1237,10 @@ PrefabInstance:
     - target: {fileID: 4678010850643601472, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678010850643601473, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678010850643601599, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_RootOrder

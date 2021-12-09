@@ -13,8 +13,6 @@ public class PlayerMovement2D : MonoBehaviour
 
     bool jump = false;
 
-    bool crouch = false;
-
     bool fly=false;
 
     // Update is called once per frame
@@ -31,21 +29,12 @@ public class PlayerMovement2D : MonoBehaviour
         {
             fly=false;
         }
-    
-        if(Input.GetButtonDown("Crouch"))
-        {
-            crouch = true;
-        }
-        else if(Input.GetButtonUp("Crouch"))
-        {
-            crouch = false;
-        }
     }
 
     void FixedUpdate()
     {      
         //move character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch,jump,fly);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump,fly);
         jump=false;
     }
 }

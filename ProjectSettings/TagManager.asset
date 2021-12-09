@@ -15,6 +15,7 @@ TagManager:
   - Ladder
   - DieFloor
   - Plattform
+  - GameMusic
   layers:
   - Default
   - TransparentFX

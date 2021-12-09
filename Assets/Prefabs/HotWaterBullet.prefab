@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5886530948811777579}
   m_Layer: 0
   m_Name: HotWaterBullet
-  m_TagString: Projectile
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65223b2830d60b478d389516e560eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expireTime: 0.4
   speed: 20
   damage: 25
   rb: {fileID: 8818128758162697874}
+  startPosition: {x: 0, y: 0}
+  endPosition: {x: 0, y: 0}
+  range: 2
+  bullet: 0
+  temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
+  temperature: {fileID: 11400000, guid: d70c8404d7089894b8ce25555e9db0b6, type: 2}
+  player: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}

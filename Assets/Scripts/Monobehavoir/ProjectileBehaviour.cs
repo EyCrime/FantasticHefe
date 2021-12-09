@@ -14,8 +14,10 @@ public class ProjectileBehaviour : MonoBehaviour
        if(Throw)
        {
            var direction = -transform.right + Vector3.up;
-           GetComponent<RigidBody2D>()
+           GetComponent<Rigidbody2D>().AddForce(direction * Speed, ForceMode2D.Impulse);
        } 
+       transform.Translate(LaunchOffset);
+       Destroy(gameObject, 5);//5 seconds boom!!!
     }
 
     // Update is called once per frame

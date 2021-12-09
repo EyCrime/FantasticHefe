@@ -29,6 +29,7 @@ public class CharacterController2D : MonoBehaviour
 	public SignalObject co2Signal; 
 
 	public float jetpackForce=7.5f;
+	public float jetpackForceAdder=0.05f;
 
 	[Header("Events")]
 	[Space]
@@ -151,7 +152,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Rigidbody2D.AddForce(Vector2.up * jetpackForce);
-			jetpackForce += 0.3f;
+			jetpackForce += jetpackForceAdder;
 			inventory.currentCO2 -= 1;
 			co2Signal.Raise();
 			isOkaytoFly=true;

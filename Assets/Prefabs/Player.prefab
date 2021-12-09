@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 8906437542960751725}
   - component: {fileID: 5256800419655555553}
   - component: {fileID: 353889960}
+  - component: {fileID: 14556602}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e46fdea3bb1d441aa869c9e88baba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
+  m_JumpForce: 1000
   m_CrouchSpeed: 0.426
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -226,6 +227,11 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 5771595989296962076}
   m_CrouchDisableCollider: {fileID: 0}
   directionSignal: {fileID: 11400000, guid: bf9edae46ecdff3429c155fa58e5cf54, type: 2}
+  m_Grounded: 0
+  isOkaytoFly: 0
+  inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  co2Signal: {fileID: 11400000, guid: 9c7cb1e3cd220a24b8476c03472d807a, type: 2}
+  jetpackForce: 7.5
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -346,7 +352,7 @@ MonoBehaviour:
   temperature: {fileID: 11400000, guid: d70c8404d7089894b8ce25555e9db0b6, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: 1fa3b4a86a7daeb428b51a035e3a0a8b, type: 2}
   startTimerSignal: {fileID: 11400000, guid: 38ef7d4c6b42a2745a3a6114e653b2d2, type: 2}
-  stopTimerSignal: {fileID: 11400000, guid: 43c5b08ce63e6a14ba09745de0382718, type: 2}
+  gameOverSignal: {fileID: 11400000, guid: 53d8cd4a66fe99e45a3d58a49400e10e, type: 2}
   coldWaterSignal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
   hotWaterSignal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
   scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
@@ -354,8 +360,6 @@ MonoBehaviour:
   temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
   force: 20
   rb: {fileID: 5771595989887656322}
-  knockDur: 0.02
-  knockbackPwr: 20
 --- !u!61 &5256800419655555553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -410,6 +414,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &14556602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771595989887656349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de61a8cd314c824292e83fe307584c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5771595990000490222
 GameObject:
   m_ObjectHideFlags: 0

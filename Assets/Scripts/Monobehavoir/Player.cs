@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Temperature temperature;
     public SignalObject playerHealthSignal;
     public SignalObject startTimerSignal;
-    public SignalObject stopTimerSignal;
+    public SignalObject gameOverSignal;
     public SignalObject coldWaterSignal;
     public SignalObject hotWaterSignal;
     public SignalObject scoreSignal;
@@ -55,10 +55,10 @@ public class Player : MonoBehaviour
    public void Die()
     {
         gameObject.SetActive(false);
-        stopTimerSignal.Raise();
+        gameOverSignal.Raise();
     }
 
-     void OnTriggerEnter2D(Collider2D collision)   //von dem kleinen jungen aber man wird nicht nach rechts gestoßen https://www.youtube.com/watch?v=-dMtWZsjX6g
+     void OnTriggerEnter2D(Collider2D collision)   //von dem kleinen jungen aber man wird nicht nach rechts gestoï¿½en https://www.youtube.com/watch?v=-dMtWZsjX6g
      {
          if (collision.CompareTag("Enemy")) 
          {
@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         }
     }*/
 
-    /* void OnTriggerEnter2D(Collider2D collision)       // funktioniert auch aber hässlich https://www.youtube.com/watch?v=RE0aWe7ByAI
+    /* void OnTriggerEnter2D(Collider2D collision)       // funktioniert auch aber hï¿½sslich https://www.youtube.com/watch?v=RE0aWe7ByAI
      {
          if (collision.CompareTag("Enemy"))
          {
@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
          }
      }*/
 
-    /* public IEnumerator Knockback(float knockDur, float knockbackPwr, Vector4 knockbackDir)    //von dem kleinen jungen aber man wird nicht nach rechts gestoßen sondern klatscht den gegner nach links https://www.youtube.com/watch?v=-dMtWZsjX6g
+    /* public IEnumerator Knockback(float knockDur, float knockbackPwr, Vector4 knockbackDir)    //von dem kleinen jungen aber man wird nicht nach rechts gestoï¿½en sondern klatscht den gegner nach links https://www.youtube.com/watch?v=-dMtWZsjX6g
      {
          float timer = 0;
 

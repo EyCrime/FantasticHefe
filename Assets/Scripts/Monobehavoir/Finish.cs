@@ -7,6 +7,7 @@ public class Finish : MonoBehaviour
     [SerializeField] private SignalObject victorySignal;
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        victorySignal.Raise();
+        if(other.CompareTag("Player"))
+            victorySignal.Raise();
     }
 }

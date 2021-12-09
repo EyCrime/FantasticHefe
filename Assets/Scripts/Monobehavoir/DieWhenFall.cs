@@ -7,6 +7,7 @@ public class DieWhenFall : MonoBehaviour
     [SerializeField] private SignalObject gameOverSignal;
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        gameOverSignal.Raise();
+        if(other.CompareTag("Player"))
+            gameOverSignal.Raise();
     }
 }

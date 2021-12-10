@@ -15,6 +15,7 @@ TagManager:
   - Ladder
   - DieFloor
   - Plattform
+  - upperLadder
   layers:
   - Default
   - TransparentFX

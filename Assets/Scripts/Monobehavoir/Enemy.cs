@@ -109,10 +109,10 @@ public class Enemy : MonoBehaviour
                     else
                         projectile = Instantiate(hotProjectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
                     
-                    Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();
-                    Vector2 startPosition = projectile.transform.position;
-                    Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
-                    rbProjectile.AddForce((target - startPosition).normalized * speed, ForceMode2D.Impulse);
+                    //Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();
+                    //Vector2 startPosition = projectile.transform.position;
+                    //Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
+                    //rbProjectile.AddForce((target - startPosition).normalized * speed, ForceMode2D.Impulse);
                 }
                 timeBetweenShots = startTimeBetweenShots;
             }

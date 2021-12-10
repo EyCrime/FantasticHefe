@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ProjectileBehaviour : MonoBehaviour
 {
     
@@ -10,8 +11,11 @@ public class ProjectileBehaviour : MonoBehaviour
     public bool Throw;
     public float Damage =1;
     public float SplashRange = 1;
-    ParticleSystem ps;
+    public ParticleSystem ps;
     public bool directionRight;
+    public float explodeTime=3.0f;
+    public float destroyTime=.5f;
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     private void Awake()
@@ -20,17 +24,9 @@ public class ProjectileBehaviour : MonoBehaviour
     }
     private void Start()
     {
-       if(Throw)
-       {    
-        ps.Play();
-        Destroy(gameObject, 5);//5 seconds boom!!!
-       }
+        rb = GetComponent<Rigidbody2D>();
+       StartCoroutine(DestroyBomb());
        
-       
-       if(gameObject==null)
-       {
-           ps.Stop();
-       }
     }
 
     // Update is called once per frame
@@ -57,17 +53,27 @@ public class ProjectileBehaviour : MonoBehaviour
 
                     var damagePercent = Mathf.InverseLerp(SplashRange,0,distance);
                     enemy.Die();
+                    ps.Play();
+                    rb.velocity = Vector2.zero;
+                     Destroy(gameObject, destroyTime);
                 }
+               
             }
         }
         else{
         var enemy = collision.collider.GetComponent<Enemy>();
         if(enemy)
-        {
+        {   
             enemy.Die();
         }
-        Destroy(gameObject);
+        
         }
         }
-       
+    private IEnumerator DestroyBomb()
+    {
+        yield return new WaitForSeconds(explodeTime);
+        ps.Play();
+        rb.velocity = Vector2.zero;
+        Destroy(gameObject, destroyTime);
+    } 
 }

@@ -347,6 +347,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4496840617003434558, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434559, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_Name
       value: HotEnemy
@@ -357,11 +361,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434689, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.789999
+      value: 16.44
       objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434689, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434689, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_LocalPosition.z
@@ -470,6 +474,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 14556592}
+    - target: {fileID: 1604902010276521804, guid: 88809204978dcf74a91045c2c687e1f2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8574499547386210081, guid: 88809204978dcf74a91045c2c687e1f2, type: 3}
       propertyPath: m_Name
       value: Map
@@ -582,7 +590,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3163689465916933541, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
   m_PrefabInstance: {fileID: 1599225233}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441980048}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef8cd3d6e52ef5144b1dc9944f1f71d5, type: 3}
@@ -605,11 +613,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5771595989887656351, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5771595989887656351, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 5771595989887656351, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
       propertyPath: m_LocalPosition.z
@@ -655,67 +663,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3536276907956644947, guid: db7b5458c1eb0394bbb3644f2d230b0b, type: 3}
   m_PrefabInstance: {fileID: 148876792}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1441980048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3163689465916933536, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
-  m_PrefabInstance: {fileID: 1599225233}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1441980049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441980048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba1a939f9453394fa427befd25f9e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 53d8cd4a66fe99e45a3d58a49400e10e, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1090234681}
-        m_TargetAssemblyTypeName: InGameMenu, Assembly-CSharp
-        m_MethodName: LoadScreen
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1441980054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441980048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba1a939f9453394fa427befd25f9e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 25f247ba8e11d984ca7e2a0dec22858e, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1090234681}
-        m_TargetAssemblyTypeName: InGameMenu, Assembly-CSharp
-        m_MethodName: LoadScreen
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1001 &1599225233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,10 +673,6 @@ PrefabInstance:
     - target: {fileID: 3163689465916933536, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
       propertyPath: m_Name
       value: Menu Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3163689465916933536, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3163689465916933540, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
       propertyPath: m_Pivot.x
@@ -916,14 +859,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4380775589279220324, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4380775589279220324, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4380775589709570005, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -1220,7 +1155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4678010849105926258, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.07999992
       objectReference: {fileID: 0}
     - target: {fileID: 4678010849105926259, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_Follow
@@ -1236,11 +1171,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4678010850643601599, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678010850643601599, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.0000005
+      value: 1.6600004
       objectReference: {fileID: 0}
     - target: {fileID: 4678010850643601599, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_LocalPosition.z

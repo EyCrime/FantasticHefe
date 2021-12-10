@@ -20,7 +20,7 @@ public class PickUp : MonoBehaviour
 
             if (gameObject.CompareTag("co2"))
             {
-                inventory.currentCO2++;
+                inventory.currentCO2 += 20;
                 co2Signal.Raise();
             }
             else if (gameObject.CompareTag("coldWater"))

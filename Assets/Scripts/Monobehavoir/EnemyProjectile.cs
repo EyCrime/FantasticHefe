@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     public float speed;
-    public int damage = 25;
     public float range;
     public Vector2 startPosition;
     public Vector2 endPosition;
@@ -50,7 +49,7 @@ public class EnemyProjectile : MonoBehaviour
                 Player player = hitInfo.GetComponent<Player>();
                 if (player != null && hitInfo.isTrigger)
                 {
-                    player.TakeDamage(damage);
+                    player.TakeDamage();
                 }
                 DestroyProjectile();
             }

@@ -62,7 +62,7 @@ Munition
 
 
 ## Design
-![Player]()
+![Player](C:\Users\Esther\Desktop\uni\5S\GameEngines\Projekt\Paletten)
 ![PlayerBullets]()
 ![Gegner]()
 ![GegnerBullets]()

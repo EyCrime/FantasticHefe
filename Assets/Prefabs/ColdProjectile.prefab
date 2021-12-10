@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  range: 1.7
+  range: 6
   startPosition: {x: 0, y: 0}
   endPosition: {x: 0, y: 0}
   rb: {fileID: -7444981539217653889}

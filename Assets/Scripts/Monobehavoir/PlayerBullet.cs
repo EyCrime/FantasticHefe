@@ -11,12 +11,14 @@ public class PlayerBullet : MonoBehaviour
     public Vector2 startPosition;
     public Vector2 endPosition;
     public float range;
+    private Animator animator;
 
     [SerializeField] private BulletType bullet;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         startPosition = transform.localPosition;
         endPosition = new Vector2(startPosition.x + range, startPosition.y);
     }
@@ -48,7 +50,9 @@ public class PlayerBullet : MonoBehaviour
 
     private void DestroyBullet()
     {
-        Destroy(gameObject);
+        animator.SetBool("destroy", true);
+        rb.velocity = Vector2.zero;
+        Destroy(gameObject, .4f);
     }
 }
 

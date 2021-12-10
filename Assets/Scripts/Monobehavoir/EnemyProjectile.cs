@@ -8,17 +8,17 @@ public class EnemyProjectile : MonoBehaviour
     public float range;
     public Vector2 startPosition;
     public Vector2 endPosition;
-
+    private Animator animator;
     public Rigidbody2D rb;
-
     private Transform player;
     private Vector2 target;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
-        endPosition = startPosition * range;
+        animator = GetComponent<Animator>();
+        startPosition = transform.localPosition;
+        endPosition = new Vector2(startPosition.x + range, startPosition.y);
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -31,12 +31,9 @@ public class EnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {     
-        if (player != null)
+        if (Vector2.Distance(startPosition, transform.localPosition) > Vector2.Distance(startPosition, endPosition))
         {
-            if (Vector2.Distance(startPosition, transform.position) > Vector2.Distance(startPosition, endPosition))
-            {
-                DestroyProjectile();
-            }
+            DestroyProjectile();
         }
     }
 
@@ -55,6 +52,8 @@ public class EnemyProjectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-        Destroy(gameObject);
+        animator.SetBool("destroy", true);
+        rb.velocity = Vector2.zero;
+        Destroy(gameObject, .4f);
     }
 }

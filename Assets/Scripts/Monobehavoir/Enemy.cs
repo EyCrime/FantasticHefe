@@ -104,22 +104,11 @@ public class Enemy : MonoBehaviour
 
                     GameObject projectile;
 
-                     var myTransform = transform;
-                     myTransform.Rotate(Vector3.forward, 180);
-
                     if(type == EnemyType.ColdEnemy)
                         projectile = Instantiate(coldProjectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
                     else
                         projectile = Instantiate(hotProjectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
-
-                    if(directionLeft)
-                    {
-                        Vector3 theScale = transform.localScale;
-                        theScale.x *= -1;
-                        projectile.transform.localScale = theScale;
-                    }
                     
-
                     Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();
                     Vector2 startPosition = projectile.transform.position;
                     Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
@@ -169,57 +158,6 @@ public class Enemy : MonoBehaviour
             slider.direction = Slider.Direction.LeftToRight;
         }
     }
-
-    /* void Update()
-     {
-         if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
-         {
-
-         }
-         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance)
-         {
-             transform.position = this.transform.position;
-
-         }
-
-         if (timeBetweenShots <= 0)
-         {
-             Instantiate(projectile, transform.position, Quaternion.identity);
-             timeBetweenShots = startTimeBetweenShots;
-
-         }
-         else
-         {
-
-             timeBetweenShots -= Time.deltaTime;
-
-         }
-
-     }*/
-
-    /*void Update()                 allllt wo er einen verfolgt
-    {
-        if(Vector2.Distance(transform.position, player.position) > stoppingDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        } else if (Vector2.Distance(transform.position, player.position) < stoppingDistance)
-        {
-            transform.position = this.transform.position;
-
-        }
-
-        if (timeBetweenShots <= 0)
-        {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            timeBetweenShots = startTimeBetweenShots;
-
-        } else {
-
-            timeBetweenShots -= Time.deltaTime;
-            
-        }
-
-    }*/
 
     public void TakeDamage(int damage)
     { 

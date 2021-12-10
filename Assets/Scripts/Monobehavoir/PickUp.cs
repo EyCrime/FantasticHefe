@@ -25,12 +25,12 @@ public class PickUp : MonoBehaviour
             }
             else if (gameObject.CompareTag("coldWater"))
             {
-                inventory.coldWater += 20;
+                inventory.coldWater += 5;
                 coldWaterSignal.Raise();
             }
             else if (gameObject.CompareTag("hotWater"))
             {
-                inventory.hotWater += 20;
+                inventory.hotWater += 5;
                 hotWaterSignal.Raise();
             }
         }

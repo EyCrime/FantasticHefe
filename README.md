@@ -1,7 +1,7 @@
 # Spielidee
 Ein Hefepilz hat sich im Brotteig verlaufen und möchte nach Hause zu seiner lilanen Couch. Leider hat er den genauen Weg vergessen und begegnet dadurch auf seinem Weg vielen unerwünschten Hindernissen. Dazu zählen die bösen kälte und wärme Wesen, dessen Ziel es ist das Zuhause der Hefepilze, dem Brotteig, zu vernichten. Um ihr Ziel zu erreichen versuchen sie nicht nur erbittert jeden Hefepilz loszuwerden, sondern Opfern sich auch bewusst im Falle ihres Todes ihrem Ziel. Zum Glück weiß der Hefepilz das und geht taktisch gegen seine Gegner vor: für jedes kälte Wesen vernichtet er ein weiteres wärme Wesen, schließlich möchte er die Temperatur im Brotteig eben halten. Dafür benutzt er die übrig gebliebenen Zuckermoleküle im Teig, welche es ihm ermöglichen Co2, heißes und kaltes Wasser zu produzieren. Er muss aber aufpassen! Kälte Wesen können ausschließlich durch heißes Wasser vernichtet werden und wärme Wesen nur mit kaltem. Seinen PupsJetpack und Kohlenstoffdioxid Bomben setzt er weise auf seinem Weg ein. 
 
-Seine Geschichte wird mitteils eines Jump 'n Run 'n Gun's erzählt mit einer seitlichen Ansicht auf das Spiel. Die Grafik ist mittels Pixelart umgesetzt worden. 
+Seine Geschichte wird mitteils eines Jump 'n Run 'n Gun's erzählt mit einer seitlichen Ansicht auf das Spiel. 
 
 
 # Steuerung
@@ -66,3 +66,15 @@ Munition
 * Esther Ruth Gülpen Garay
 * Fatlind Krasniqi
 * Habib Farhan
+
+
+## Design
+![Player]()
+![PlayerBullets]()
+![Gegner]()
+![GegnerBullets]()
+![Items]()
+![Map]()
+![UI Canvas]()
+![Hauptmenü]()
+![Settingsmenü]()

@@ -62,7 +62,7 @@ Munition
 
 
 ## Design
-![Player](FantasticHefe\Assets\Sprites)
+![Player](Assets\Sprites)
 ![PlayerBullets]()
 ![Gegner]()
 ![GegnerBullets]()

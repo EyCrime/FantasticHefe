@@ -4451,7 +4451,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3163689465916933541, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
   m_PrefabInstance: {fileID: 1599225233}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1441980048}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef8cd3d6e52ef5144b1dc9944f1f71d5, type: 3}
@@ -4964,6 +4964,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4380775590084969356, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380775590084969356, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 629f27fbe57a028448a1b60dc5e0670c, type: 3}
+    - target: {fileID: 4380775590084969356, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4026344
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380775590084969356, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8188204
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380775590084969356, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
     - target: {fileID: 8669090539858425372, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5164,7 +5184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4678010849105926258, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07999992
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4678010849105926259, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_Follow

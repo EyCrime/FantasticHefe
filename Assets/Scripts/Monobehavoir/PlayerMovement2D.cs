@@ -13,11 +13,14 @@ public class PlayerMovement2D : MonoBehaviour
 
     bool jump = false;
 
-    bool crouch = false;
-
     bool fly=false;
+    ParticleSystem ps;
 
     // Update is called once per frame
+   void Awake()
+   {
+       ps=GetComponentInChildren<ParticleSystem>();
+   }
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -26,26 +29,19 @@ public class PlayerMovement2D : MonoBehaviour
         {
             jump=true;
             fly=true;
+            ps.Play();
         }
         else if(Input.GetButtonUp("Jump"))
         {
             fly=false;
-        }
-    
-        if(Input.GetButtonDown("Crouch"))
-        {
-            crouch = true;
-        }
-        else if(Input.GetButtonUp("Crouch"))
-        {
-            crouch = false;
+            ps.Stop();
         }
     }
 
     void FixedUpdate()
     {      
         //move character
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch,jump,fly);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump,fly);
         jump=false;
     }
 }

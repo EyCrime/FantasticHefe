@@ -4,25 +4,70 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
-    public float Speed = 4;
+    
+    public float Speed = 7;
     public Vector3 LaunchOffset;
     public bool Throw;
+    public float Damage =1;
+    public float SplashRange = 1;
+    ParticleSystem ps;
+    public bool directionRight;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
+    {
+        ps=GetComponentInChildren<ParticleSystem>();
+    }
+    private void Start()
     {
        if(Throw)
+       {    
+        ps.Play();
+        Destroy(gameObject, 5);//5 seconds boom!!!
+       }
+       
+       
+       if(gameObject==null)
        {
-           var direction = -transform.right + Vector3.up;
-           GetComponent<Rigidbody2D>().AddForce(direction * Speed, ForceMode2D.Impulse);
-       } 
-       transform.Translate(LaunchOffset);
-       Destroy(gameObject, 5);//5 seconds boom!!!
+           ps.Stop();
+       }
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+       if(!Throw)
+       {
+           transform.position += -transform.right * Speed * Time.deltaTime;
+       } 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(SplashRange>0)
+        {
+           var hitColliders = Physics2D.OverlapCircleAll(transform.position, SplashRange);
+            foreach(var hitCollider in hitColliders)
+            {
+                var enemy = hitCollider.GetComponent<Enemy>();
+                if(enemy)
+                {
+                    var closestPoint = hitCollider.ClosestPoint(transform.position);
+                    var distance = Vector3.Distance(closestPoint, transform.position);
+
+                    var damagePercent = Mathf.InverseLerp(SplashRange,0,distance);
+                    enemy.Die();
+                }
+            }
+        }
+        else{
+        var enemy = collision.collider.GetComponent<Enemy>();
+        if(enemy)
+        {
+            enemy.Die();
+        }
+        Destroy(gameObject);
+        }
+        }
+       
 }

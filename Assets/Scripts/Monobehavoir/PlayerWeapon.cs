@@ -11,15 +11,27 @@ public class PlayerWeapon : MonoBehaviour
     public SignalObject switchAmmoSignal;
     public SignalObject coldWaterSignal;
     public SignalObject hotWaterSignal;
+    public GameObject projectilePrefab;
+    public SignalObject co2Signal; 
     private bool isHotAmmo;
 
     public float speed = 20f;
+    public float bombSpeed = 10f;
 
     public bool directionRight;
 
     // Update is called once per frame
     void Update()
     {
+         if(Input.GetKeyDown(KeyCode.Mouse1))
+         {
+             if(inventory.currentCO2==inventory.maxCO2)
+             
+             {
+                 ShootBomb();
+             }
+         }
+
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (!isHotAmmo && inventory.coldWater > 0)
@@ -69,7 +81,21 @@ public class PlayerWeapon : MonoBehaviour
         inventory.hotWater--;
         hotWaterSignal.Raise();
     }
-
+    void ShootBomb()
+    {
+        GameObject bomb = Instantiate(projectilePrefab, bulletSpawn.position, transform.rotation);
+        Rigidbody2D rbBomb = bomb.GetComponent<Rigidbody2D>();
+         if (directionRight)
+        {
+            rbBomb.velocity = -(transform.right + Vector3.down) * bombSpeed;
+        }
+        else
+        {
+            rbBomb.velocity = (transform.right + Vector3.up) * bombSpeed;
+        }
+        inventory.currentCO2 = 0;
+        co2Signal.Raise();
+    }
     public void ChangeDirection()
     {
         directionRight = !directionRight;

@@ -62,22 +62,41 @@ Munition
 
 
 ## Design
+Unser Player und seine verschiedene Munition
 ![Player](https://github.com/EyCrime/FantasticHefe/blob/main/images/jumping.png)
 ![HotPlayerBullets](https://github.com/EyCrime/FantasticHefe/blob/main/images/hotWaterbullet_Spritesheat.png)
 ![ColdPlayerBullets](https://github.com/EyCrime/FantasticHefe/blob/main/images/coldWaterbullet_Spritesheat.png)
-![Co2bombe](https://github.com/EyCrime/FantasticHefe/blob/main/images/coldWaterbullet_Spritesheat.png)
+![Co2bombe](https://github.com/EyCrime/FantasticHefe/blob/main/images/1.png)
+
+Der hitze Gegner und seine Munition
 ![HotGegner](https://github.com/EyCrime/FantasticHefe/blob/main/images/Fire_Spirit_Spritesheat.png)
-![HotGegnerBullets]()
+![HotGegnerBullets](https://github.com/EyCrime/FantasticHefe/blob/main/images/hotProjectile_Spritesheat.png)
+
+Der kälte Gegner
 ![ColdGegner](https://github.com/EyCrime/FantasticHefe/blob/main/images/Ice_Spirit_Spritesheat.png)
-![ColdGegnerBullets]()
+![ColdGegnerBullets](https://github.com/EyCrime/FantasticHefe/blob/main/images/coldProjectile_Spritesheat.png)
+
+Die verschiedenen Items
 ![Co2](https://github.com/EyCrime/FantasticHefe/blob/main/images/CZucker.png)
 ![heißesWasser](https://github.com/EyCrime/FantasticHefe/blob/main/images/HZucker.png)
 ![kaltesWasser](https://github.com/EyCrime/FantasticHefe/blob/main/images/KZucker.png)
+
+Unser TilesetSheet
+
 ![Map](https://github.com/EyCrime/FantasticHefe/blob/main/images/TilesetMap-export.png)
+
+Zuhause vom Pilz
+
 ![ending couch](https://github.com/EyCrime/FantasticHefe/blob/main/images/Finish-export.png)
-![UI Canvas]()
-![Hauptmenü]()
-![Settingsmenü]()
+
+UI in Game
+
+![UI Canvas](https://github.com/EyCrime/FantasticHefe/blob/main/images/UI.png)
+
+Die Menüs:
+
+![Hauptmenü](https://github.com/EyCrime/FantasticHefe/blob/main/images/Hauptmen%C3%BC.png)
+![Settingsmenü](https://github.com/EyCrime/FantasticHefe/blob/main/images/settingsmenu.png)
 
 
 ## Teammitglieder

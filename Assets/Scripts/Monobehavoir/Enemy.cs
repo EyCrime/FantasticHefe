@@ -46,6 +46,9 @@ public class Enemy : MonoBehaviour
 
     public float dODBZN;
 
+    public AudioSource iceBulletSound;
+    public AudioSource fireBulletSound;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -104,11 +107,15 @@ public class Enemy : MonoBehaviour
 
                     GameObject projectile;
 
-                    if(type == EnemyType.ColdEnemy)
+                    if (type == EnemyType.ColdEnemy)
+                    {                       
                         projectile = Instantiate(coldProjectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
-                    else
+                        iceBulletSound.Play();
+                    }
+                    else 
                         projectile = Instantiate(hotProjectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
-                    
+                        fireBulletSound.Play();
+
                     Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();
                     Vector2 startPosition = projectile.transform.position;
                     Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);

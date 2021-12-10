@@ -9,6 +9,8 @@ public class PickUp : MonoBehaviour
     [SerializeField] private SignalObject hotWaterSignal;
     [SerializeField] private SignalObject scoreSignal;
 
+    public AudioSource pickUpSound;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player" && other.isTrigger)
@@ -17,6 +19,7 @@ public class PickUp : MonoBehaviour
 
             inventory.score += 20;
             scoreSignal.Raise();
+            pickUpSound.Play();
 
             if (gameObject.CompareTag("co2"))
             {

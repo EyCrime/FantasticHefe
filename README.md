@@ -62,12 +62,15 @@ Munition
 
 
 ## Design
-![Player](\Assets\Sprites\jumping.png)
+![Player](https://github.com/EyCrime/FantasticHefe/blob/main/images/jumping.png)
 ![PlayerBullets]()
 ![Gegner]()
 ![GegnerBullets]()
-![Items]()
-![Map]()
+![Co2](https://github.com/EyCrime/FantasticHefe/blob/main/images/CZucker.png)
+![heißesWasser](https://github.com/EyCrime/FantasticHefe/blob/main/images/HZucker.png)
+![kaltesWasser](https://github.com/EyCrime/FantasticHefe/blob/main/images/KZucker.png)
+![Map](https://github.com/EyCrime/FantasticHefe/blob/main/images/TilesetMap-export.png)
+![ending couch](https://github.com/EyCrime/FantasticHefe/blob/main/images/Finish.png)
 ![UI Canvas]()
 ![Hauptmenü]()
 ![Settingsmenü]()

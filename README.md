@@ -63,11 +63,13 @@ Munition
 
 ## Design
 ![Player](https://github.com/EyCrime/FantasticHefe/blob/main/images/jumping.png)
-![PlayerBullets]()
+![HotPlayerBullets](https://github.com/EyCrime/FantasticHefe/blob/main/images/hotWaterbullet_Spritesheat.png)
+![ColdPlayerBullets](https://github.com/EyCrime/FantasticHefe/blob/main/images/coldWaterbullet_Spritesheat.png)
+![Co2bombe](https://github.com/EyCrime/FantasticHefe/blob/main/images/coldWaterbullet_Spritesheat.png)
 ![HotGegner](https://github.com/EyCrime/FantasticHefe/blob/main/images/Fire_Spirit_Spritesheat.png)
-![HotGegnerBullets](https://github.com/EyCrime/FantasticHefe/blob/main/images/hotWaterbullet_Spritesheat.png)
+![HotGegnerBullets]()
 ![ColdGegner](https://github.com/EyCrime/FantasticHefe/blob/main/images/Ice_Spirit_Spritesheat.png)
-![ColdGegnerBullets](https://github.com/EyCrime/FantasticHefe/blob/main/images/coldWaterbullet_Spritesheat.png)
+![ColdGegnerBullets]()
 ![Co2](https://github.com/EyCrime/FantasticHefe/blob/main/images/CZucker.png)
 ![heißesWasser](https://github.com/EyCrime/FantasticHefe/blob/main/images/HZucker.png)
 ![kaltesWasser](https://github.com/EyCrime/FantasticHefe/blob/main/images/KZucker.png)

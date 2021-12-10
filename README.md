@@ -61,13 +61,6 @@ Munition
 * Gegner die einen verfolgen
 
 
-## Teammitglieder
-* Emircan Yüksel
-* Esther Ruth Gülpen Garay
-* Fatlind Krasniqi
-* Habib Farhan
-
-
 ## Design
 ![Player]()
 ![PlayerBullets]()
@@ -78,3 +71,10 @@ Munition
 ![UI Canvas]()
 ![Hauptmenü]()
 ![Settingsmenü]()
+
+
+## Teammitglieder
+* Emircan Yüksel
+* Esther Ruth Gülpen Garay
+* Fatlind Krasniqi
+* Habib Farhan

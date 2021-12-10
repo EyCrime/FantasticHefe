@@ -1,7 +1,21 @@
 # Spielidee
-* Ein Jump ‘n’ Run Spiel von der Seitenansicht wie Super Mario.
-* Hefepilz versucht im Teig zu überleben, um seinen richtigen Spot im Teig zu finden.
-* Er wird von Feinden angegriffen, die er besiegen kann, aber muss stets auf die Teigtemperatur achten.
+Ein Hefepilz hat sich im Brotteig verlaufen und möchte nach Hause zu seiner lilanen Couch. Leider hat er den genauen Weg vergessen und begegnet dadurch auf seinem Weg vielen unerwünschten Hindernissen. Dazu zählen die bösen kälte und wärme Wesen, dessen Ziel es ist das Zuhause der Hefepilze, dem Brotteig, zu vernichten. Um ihr Ziel zu erreichen versuchen sie nicht nur erbittert jeden Hefepilz loszuwerden, sondern Opfern sich auch bewusst im Falle ihres Todes ihrem Ziel. Zum Glück weiß der Hefepilz das und geht taktisch gegen seine Gegner vor: für jedes kälte Wesen vernichtet er ein weiteres wärme Wesen, schließlich möchte er die Temperatur im Brotteig eben halten. Dafür benutzt er die übrig gebliebenen Zuckermoleküle im Teig, welche es ihm ermöglichen Co2, heißes und kaltes Wasser zu produzieren. Er muss aber aufpassen! Kälte Wesen können ausschließlich durch heißes Wasser vernichtet werden und wärme Wesen nur mit kaltem. Seinen PupsJetpack und Kohlenstoffdioxid Bomben setzt er weise auf seinem Weg ein. 
+
+Seine Geschichte wird mitteils eines Jump 'n Run 'n Gun's erzählt mit einer seitlichen Ansicht auf das Spiel. Die Grafik ist mittels Pixelart umgesetzt worden. 
+
+
+# Steuerung
+
+Bewegung
+* laufen mit A(links) und D(rechts)
+* spingen mit W oder Leertaste 
+* Jetpack doppel W oder Leertaste
+
+Munition
+* linke Maustaste zum Schießen
+* shift für den Munitionswechsel
+* rechte Maustaste für den Bombenwurf
+
 
 ## Hauptmechanik
 * 1 Level
@@ -20,6 +34,7 @@
 * Zwei Zuckerarten für sowohl Wasser (Icon mit Anzahl der Munition) und Co2  (Ladebalken mit Manaanzeige)
 * Gameover: Gegner 4 mal getroffen (3 Leben), runterfallen oder Zeitlimit abgelaufen
 
+
 ### Should have
 * Rechte Maustaste: Furzbombe
   * Macht einen Bogen und kann nur verwendet werden, wenn man 100% Co2 hat
@@ -31,6 +46,7 @@
 * Ice Spirits
 * Zuckerart für heißes Wasser
 * Gameover: Temperatur zu hoch/tief
+
 
 ### Nice to have
 * Mehr Level
@@ -44,13 +60,8 @@
 * Secrets/ Rätsel
 * Gegner die einen verfolgen
 
-## Genre & Art Style
-* Jump ‘n’ Run
-* Cartoon
-* Hefepilz im Teig
 
-
-## Mitarbeiter
+## Teammitglieder
 * Emircan Yüksel
 * Esther Ruth Gülpen Garay
 * Fatlind Krasniqi

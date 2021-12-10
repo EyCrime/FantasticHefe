@@ -82,15 +82,19 @@ Die verschiedenen Items
 ![kaltesWasser](https://github.com/EyCrime/FantasticHefe/blob/main/images/KZucker.png)
 
 Unser TilesetSheet
+
 ![Map](https://github.com/EyCrime/FantasticHefe/blob/main/images/TilesetMap-export.png)
 
-Zuhause vom Pilzes
+Zuhause vom Pilz
+
 ![ending couch](https://github.com/EyCrime/FantasticHefe/blob/main/images/Finish-export.png)
 
 UI in Game
+
 ![UI Canvas](https://github.com/EyCrime/FantasticHefe/blob/main/images/UI.png)
 
 Die Menüs:
+
 ![Hauptmenü](https://github.com/EyCrime/FantasticHefe/blob/main/images/Hauptmen%C3%BC.png)
 ![Settingsmenü](https://github.com/EyCrime/FantasticHefe/blob/main/images/settingsmenu.png)
 

@@ -21,19 +21,13 @@ public class MapIsTrigger : MonoBehaviour
         {
             plattformCollider.isTrigger = true;
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && collision == playerCollider)
         {
-            if (twice)
-            {
                 plattformCollider.isTrigger = false;
-            }
-
-            twice = !twice;
         }
 
     }

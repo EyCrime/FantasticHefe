@@ -17,9 +17,10 @@ public class LadderMovement : MonoBehaviour
     {
         vertical = Input.GetAxis("Vertical");
 
-        if(isLadder && Mathf.Abs(vertical) > 0f)
+        if (isLadder && Mathf.Abs(vertical) > 0f)
         {
             isClimbing = true;
+  
         }
     }
 
@@ -40,7 +41,6 @@ public class LadderMovement : MonoBehaviour
         {
             isLadder = true;
         }
-        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
 
     public AudioSource damageSound;
-    public AudioSource deathSound;
 
     void Start()
     {
@@ -43,11 +42,11 @@ public class Player : MonoBehaviour
     {
         playerInventory.currentHealth--;
         playerHealthSignal.Raise();
-        if(playerInventory.currentHealth >= 1)
+        if(playerInventory.currentHealth > 0)
         {
             damageSound.Play();
         }
-        if (playerInventory.currentHealth <= 0)
+        else
         {
             Die();
         }
@@ -55,7 +54,6 @@ public class Player : MonoBehaviour
 
    public void Die()
     {
-        deathSound.Play();
         gameObject.SetActive(false);
         gameOverSignal.Raise();
     }

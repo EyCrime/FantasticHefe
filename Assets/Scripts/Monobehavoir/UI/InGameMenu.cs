@@ -12,6 +12,8 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] private Inventory playerInventory;
     [SerializeField] private TextMeshProUGUI scoreUI;
     [SerializeField] private Timer timer;
+    [SerializeField] private AudioSource gameOverSound;
+
 
     private bool gameIsActive = true;
     private bool gameIsFinished;
@@ -42,10 +44,15 @@ public class InGameMenu : MonoBehaviour
     {
         scoreUI.text = "" + calcFinalScore();
         
-        if(isVictory)
+        if(isVictory) 
+        {
             victoryMenuUI.SetActive(true);
-        else
+        }
+        else 
+        {
+            gameOverSound.Play();
             gameOverMenuUI.SetActive(true);
+        }
 
         Time.timeScale = 0f;
         gameIsActive = false;

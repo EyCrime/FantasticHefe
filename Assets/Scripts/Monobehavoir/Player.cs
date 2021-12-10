@@ -19,11 +19,6 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D rb;
 
-   // public float knockDur;
-    //public float knockbackPwr;
-
-
-    // Start is called before the first frame update
     void Start()
     {
         playerInventory.currentHealth = playerInventory.maxHealth;
@@ -41,7 +36,6 @@ public class Player : MonoBehaviour
         temperatureSignal.Raise();
     }
 
-    // Update is called once per frame
     public void TakeDamage()
     {
         playerInventory.currentHealth--;

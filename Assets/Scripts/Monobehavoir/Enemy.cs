@@ -232,7 +232,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         if (type == EnemyType.HotEnemy)
         {

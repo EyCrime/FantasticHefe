@@ -30,7 +30,7 @@ public class PlayerBullet : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)               // wenn man die Methode auskommentiert, fliegt die kugel wieder oder man verschiebt im editor den bulletspawn wtf
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (!hitInfo.CompareTag("Player") && !hitInfo.CompareTag("Turn") && !hitInfo.CompareTag("co2") && !hitInfo.CompareTag("hotWater") && !hitInfo.CompareTag("coldWater"))
         {   

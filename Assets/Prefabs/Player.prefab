@@ -5062,7 +5062,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.37, y: 0.32}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5117,7 +5117,10 @@ MonoBehaviour:
   switchAmmoSignal: {fileID: 11400000, guid: 478d20ed8cdbd62479bc29dd19cafb49, type: 2}
   coldWaterSignal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
   hotWaterSignal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
+  projectilePrefab: {fileID: 9182882227414010633, guid: 79b559d2254629e4185a7938d0e1619d, type: 3}
+  co2Signal: {fileID: 11400000, guid: 9c7cb1e3cd220a24b8476c03472d807a, type: 2}
   speed: 20
+  bombSpeed: 6
   directionRight: 0
 --- !u!50 &5771595989887656322
 Rigidbody2D:
@@ -5174,7 +5177,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 2}
-    newSize: {x: 0.37, y: 0.32}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -5196,6 +5199,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 5771595989887656323}
   runSpeed: 40
+  LaunchOffset: {fileID: 0}
+  inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
+  co2Signal: {fileID: 11400000, guid: 9c7cb1e3cd220a24b8476c03472d807a, type: 2}
 --- !u!114 &8906437542960751725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5238,7 +5244,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 2}
-    newSize: {x: 0.37, y: 0.32}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

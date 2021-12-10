@@ -521,7 +521,8 @@ MonoBehaviour:
   slider: {fileID: 0}
   healthBar: {fileID: 4496840616679566239}
   startTimeBetweenShots: 2
-  projectilePrefab: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
+  coldProjectilePrefab: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
+  hotProjectilePrefab: {fileID: 1609210896066645865, guid: 4d62d2c85e1c82544843af6d5733128a, type: 3}
   dODBZN: 0
 --- !u!61 &1582482083
 BoxCollider2D:

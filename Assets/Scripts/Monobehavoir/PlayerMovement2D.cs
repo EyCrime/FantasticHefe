@@ -7,6 +7,7 @@ public class PlayerMovement2D : MonoBehaviour
     // Start is called before the first frame update
     public CharacterController2D controller;
 
+    
     public float runSpeed = 40f;
 
     float horizontalMove = 0f;
@@ -15,7 +16,12 @@ public class PlayerMovement2D : MonoBehaviour
 
     bool fly=false;
     ParticleSystem ps;
+    public Transform LaunchOffset;
 
+    public Inventory inventory;
+	public SignalObject co2Signal; 
+
+   
     // Update is called once per frame
    void Awake()
    {
@@ -36,6 +42,7 @@ public class PlayerMovement2D : MonoBehaviour
             fly=false;
             ps.Stop();
         }
+        
     }
 
     void FixedUpdate()
@@ -44,4 +51,5 @@ public class PlayerMovement2D : MonoBehaviour
         controller.Move(horizontalMove * Time.fixedDeltaTime, jump,fly);
         jump=false;
     }
+   
 }

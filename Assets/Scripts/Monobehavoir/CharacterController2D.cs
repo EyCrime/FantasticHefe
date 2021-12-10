@@ -42,6 +42,8 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
+
+
 	}
 
 	private void FixedUpdate()

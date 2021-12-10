@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealth: 3
-  coldWater: 20
+  coldWater: 19
   hotWater: 20
-  score: 60
+  score: 80
   maxCO2: 1000
-  currentCO2: 890
+  currentCO2: 0

@@ -52,7 +52,16 @@ public class PlayerWeapon : MonoBehaviour
 
     void ShootColdBullet()
     {
+
         GameObject coldBullet = Instantiate(coldWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+        if(directionRight)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            coldBullet.transform.localScale = theScale;
+        }
+
         Rigidbody2D rbCold = coldBullet.GetComponent<Rigidbody2D>();
         if (directionRight)
         {
@@ -69,6 +78,14 @@ public class PlayerWeapon : MonoBehaviour
     void ShootHotBullet()
     {
         GameObject hotBullet = Instantiate(hotWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+        if(directionRight)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            hotBullet.transform.localScale = theScale;
+        }
+
         Rigidbody2D rbHot = hotBullet.GetComponent<Rigidbody2D>();
         if (directionRight)
         {

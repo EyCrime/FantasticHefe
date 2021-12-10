@@ -41,7 +41,8 @@ public class Enemy : MonoBehaviour
     private float timeBetweenShots;
     public float startTimeBetweenShots;
 
-    public GameObject projectilePrefab;
+    public GameObject coldProjectilePrefab;
+    public GameObject hotProjectilePrefab;
 
     public float dODBZN;
 
@@ -100,7 +101,25 @@ public class Enemy : MonoBehaviour
             if (timeBetweenShots <= 0)
             {
                 if(player.activeInHierarchy) { 
-                    GameObject projectile = Instantiate(projectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+                    GameObject projectile;
+
+                     var myTransform = transform;
+                     myTransform.Rotate(Vector3.forward, 180);
+
+                    if(type == EnemyType.ColdEnemy)
+                        projectile = Instantiate(coldProjectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
+                    else
+                        projectile = Instantiate(hotProjectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+                    if(directionLeft)
+                    {
+                        Vector3 theScale = transform.localScale;
+                        theScale.x *= -1;
+                        projectile.transform.localScale = theScale;
+                    }
+                    
+
                     Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();
                     Vector2 startPosition = projectile.transform.position;
                     Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);

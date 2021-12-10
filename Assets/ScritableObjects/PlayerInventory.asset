@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 3
   coldWater: 0
-  hotWater: 0
-  score: 0
+  hotWater: 5
+  score: 80
   maxCO2: 100
   currentCO2: 0

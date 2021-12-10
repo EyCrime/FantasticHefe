@@ -5198,6 +5198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5771595989887656323}
+  animator: {fileID: 8207506212029444539}
   runSpeed: 40
   LaunchOffset: {fileID: 0}
   inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}

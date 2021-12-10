@@ -62,7 +62,7 @@ Munition
 
 
 ## Design
-![Player](Assets\Sprites)
+![Player](Assets\Sprites\jumping.png)
 ![PlayerBullets]()
 ![Gegner]()
 ![GegnerBullets]()

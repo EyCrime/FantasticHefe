@@ -356,6 +356,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4496840617003434558, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434559, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_Name
       value: HotEnemy
@@ -366,11 +370,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434689, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.789999
+      value: 16.44
       objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434689, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4496840617003434689, guid: 7517ee02e62a0804ab35dca8cf981c62, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4447,7 +4451,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3163689465916933541, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
   m_PrefabInstance: {fileID: 1599225233}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1441980048}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef8cd3d6e52ef5144b1dc9944f1f71d5, type: 3}
@@ -4675,10 +4679,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3163689465916933536, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3163689465916933540, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4868,14 +4868,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4380775589279220324, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4380775589279220324, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4380775589709570005, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -5172,7 +5164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4678010849105926258, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.07999992
       objectReference: {fileID: 0}
     - target: {fileID: 4678010849105926259, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
       propertyPath: m_Follow

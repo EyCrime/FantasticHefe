@@ -6,20 +6,15 @@ using UnityEngine.UI;
 public class TemperatureBarManager : MonoBehaviour
 {
     [SerializeField] private Temperature temperature;
-    [SerializeField] private Slider temperatureSlider;
-    [SerializeField] private Gradient gradient;
-    [SerializeField] private Image fill;
+    [SerializeField] private Sprite[] thermometerSprites;
+    [SerializeField] private Image currentImage;
 
-    private void Start() {
-        temperatureSlider.maxValue = temperature.max;
-        temperatureSlider.value = temperature.current;
-
-        fill.color = gradient.Evaluate(0.5f);
+    private void Start() {    
+        currentImage.sprite = thermometerSprites[temperature.normal];
     }
 
     public void UpdateTemperature()
     {
-        temperatureSlider.value = temperature.current;
-        fill.color = gradient.Evaluate(temperatureSlider.normalizedValue);
+        currentImage.sprite = thermometerSprites[temperature.current];
     }
 }

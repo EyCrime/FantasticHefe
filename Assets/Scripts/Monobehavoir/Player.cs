@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
         playerInventory.currentHealth--;
         playerHealthSignal.Raise();
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
      {
          if (collision.CompareTag("Enemy")) 
          {
-            TakeDamage(25);
+            TakeDamage(); 
             Vector3 pushDirection = collision.transform.position - transform.position;
 
             pushDirection = -pushDirection.normalized;

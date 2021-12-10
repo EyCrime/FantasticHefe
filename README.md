@@ -62,7 +62,7 @@ Munition
 
 
 ## Design
-![Player](C:\Users\Esther\Desktop\uni\5S\GameEngines\Projekt\Paletten)
+![Player](FantasticHefe\Assets\Sprites)
 ![PlayerBullets]()
 ![Gegner]()
 ![GegnerBullets]()

@@ -22,6 +22,8 @@ public class PlayerWeapon : MonoBehaviour
 
     public AudioSource waterBulletSound;
     public AudioSource hotBulletSound;
+    public AudioSource bombSound;
+    public AudioSource throwSound;
 
     // Update is called once per frame
     void Update()
@@ -32,6 +34,8 @@ public class PlayerWeapon : MonoBehaviour
              
              {
                  ShootBomb();
+                 throwSound.Play();
+                 bombSound.PlayDelayed(3.0f);
              }
          }
 

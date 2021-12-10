@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public AudioSource damageSound;
+    public AudioSource deathSound;
+
     void Start()
     {
         playerInventory.currentHealth = playerInventory.maxHealth;
@@ -40,6 +43,10 @@ public class Player : MonoBehaviour
     {
         playerInventory.currentHealth--;
         playerHealthSignal.Raise();
+        if(playerInventory.currentHealth >= 1)
+        {
+            damageSound.Play();
+        }
         if (playerInventory.currentHealth <= 0)
         {
             Die();
@@ -48,6 +55,7 @@ public class Player : MonoBehaviour
 
    public void Die()
     {
+        deathSound.Play();
         gameObject.SetActive(false);
         gameOverSignal.Raise();
     }

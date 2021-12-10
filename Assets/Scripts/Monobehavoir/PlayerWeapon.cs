@@ -20,6 +20,9 @@ public class PlayerWeapon : MonoBehaviour
 
     public bool directionRight;
 
+    public AudioSource waterBulletSound;
+    public AudioSource hotBulletSound;
+
     // Update is called once per frame
     void Update()
     {
@@ -36,11 +39,13 @@ public class PlayerWeapon : MonoBehaviour
         {
             if (!isHotAmmo && inventory.coldWater > 0)
             {
-                ShootColdBullet();         
+                ShootColdBullet();
+                waterBulletSound.Play();
             }
             else if (isHotAmmo && inventory.hotWater > 0)
             {
                 ShootHotBullet();
+                hotBulletSound.Play();
             }
         }
 
@@ -52,10 +57,9 @@ public class PlayerWeapon : MonoBehaviour
 
     void ShootColdBullet()
     {
-
         GameObject coldBullet = Instantiate(coldWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
 
-        if(directionRight)
+        if (directionRight)
         {
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
@@ -73,13 +77,14 @@ public class PlayerWeapon : MonoBehaviour
         }
         inventory.coldWater--;
         coldWaterSignal.Raise();
+        
     }
     
     void ShootHotBullet()
-    {
-        GameObject hotBullet = Instantiate(hotWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+    { 
+        GameObject hotBullet = Instantiate(hotWaterBulletPrefab, bulletSpawn.position, bulletSpawn.rotation);       
 
-        if(directionRight)
+        if (directionRight)
         {
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
@@ -97,6 +102,7 @@ public class PlayerWeapon : MonoBehaviour
         }
         inventory.hotWater--;
         hotWaterSignal.Raise();
+        
     }
     void ShootBomb()
     {

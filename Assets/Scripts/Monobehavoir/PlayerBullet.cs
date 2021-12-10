@@ -8,7 +8,6 @@ public class PlayerBullet : MonoBehaviour
     public float speed = 20f;
     public int damage = 25;
     public Rigidbody2D rb;
-
     public Vector2 startPosition;
     public Vector2 endPosition;
     public float range;
@@ -18,13 +17,13 @@ public class PlayerBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
-        endPosition = startPosition * range; 
+        startPosition = transform.localPosition;
+        endPosition = new Vector2(startPosition.x + range, startPosition.y);
     }
 
     void Update()
     {
-        if (Vector2.Distance(startPosition, transform.position) > Vector2.Distance(startPosition, endPosition))
+        if (Vector2.Distance(startPosition, transform.localPosition) > Vector2.Distance(startPosition, endPosition))
         {
             DestroyBullet();
         }
@@ -42,7 +41,6 @@ public class PlayerBullet : MonoBehaviour
                     enemy.TakeDamage(damage);
                     
                 }
-
             }
             DestroyBullet();
         }

@@ -8,26 +8,27 @@ public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] private TMP_Dropdown graphicsDropdown;
 
     private Resolution[] resolutions;
 
     private void Start () 
     {
+        graphicsDropdown.value = QualitySettings.GetQualityLevel();
         resolutions = Screen.resolutions;
-
 
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
-
         int currResolution = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
+            if(!options.Contains(option))
+                options.Add(option);
 
-            if(resolutions[i].width == Screen.currentResolution.width 
-            && resolutions[i].height == Screen.currentResolution.height)
+            if(resolutions[i].width == Screen.width 
+            && resolutions[i].height == Screen.height)
             {
                 currResolution = i;
             }

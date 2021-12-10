@@ -42,17 +42,14 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("Turn"))
+        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("Turn") && !hitInfo.CompareTag("co2") && !hitInfo.CompareTag("hotWater") && !hitInfo.CompareTag("coldWater"))
         {
-            if (hitInfo.CompareTag("Player") || hitInfo.CompareTag("PlayerBullet"))
+            Player player = hitInfo.GetComponent<Player>();
+            if (player != null && hitInfo.isTrigger)
             {
-                Player player = hitInfo.GetComponent<Player>();
-                if (player != null && hitInfo.isTrigger)
-                {
-                    player.TakeDamage();
-                }
-                DestroyProjectile();
+                player.TakeDamage();
             }
+            DestroyProjectile();
         }
     }
 

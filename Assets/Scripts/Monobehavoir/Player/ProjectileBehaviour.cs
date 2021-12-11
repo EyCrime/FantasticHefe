@@ -5,44 +5,27 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
-    
-    public float Speed = 7;
-    public Vector3 LaunchOffset;
-    public bool Throw;
-    public float Damage =1;
-    public float SplashRange = 1;
-    public ParticleSystem ps;
-    public bool directionRight;
-    public float explodeTime=3.0f;
-    public float destroyTime=.5f;
-    public Rigidbody2D rb;
+    public float splashRange = 1;
+    public float speed = 7;
+    public float explodeTime = 3.0f;
+    public float destroyTime = .5f;
+    private AudioSource bombSound;
+    private ParticleSystem ps;
+    private Rigidbody2D rb;
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        ps=GetComponentInChildren<ParticleSystem>();
-    }
     private void Start()
     {
+        ps = GetComponentInChildren<ParticleSystem>();
         rb = GetComponent<Rigidbody2D>();
-       StartCoroutine(DestroyBomb());
-       
-    }
-
-    // Update is called once per frame
-    public void Update()
-    {
-       if(!Throw)
-       {
-           transform.position += -transform.right * Speed * Time.deltaTime;
-       } 
+        bombSound = GetComponent<AudioSource>();
+        StartCoroutine(DestroyBombCor());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(SplashRange>0)
+        if(splashRange>0)
         {
-           var hitColliders = Physics2D.OverlapCircleAll(transform.position, SplashRange);
+           var hitColliders = Physics2D.OverlapCircleAll(transform.position, splashRange);
             foreach(var hitCollider in hitColliders)
             {
                 var enemy = hitCollider.GetComponent<Enemy>();
@@ -51,29 +34,31 @@ public class ProjectileBehaviour : MonoBehaviour
                     var closestPoint = hitCollider.ClosestPoint(transform.position);
                     var distance = Vector3.Distance(closestPoint, transform.position);
 
-                    var damagePercent = Mathf.InverseLerp(SplashRange,0,distance);
+                    var damagePercent = Mathf.InverseLerp(splashRange, 0, distance);
                     enemy.Die();
-                    ps.Play();
-                    rb.velocity = Vector2.zero;
-                     Destroy(gameObject, destroyTime);
+                    DestroyBomb();
                 }
                
             }
         }
-        else{
-        var enemy = collision.collider.GetComponent<Enemy>();
-        if(enemy)
-        {   
-            enemy.Die();
+        else
+        {
+            var enemy = collision.collider.GetComponent<Enemy>();
+            if(enemy)
+                enemy.Die();
         }
-        
-        }
-        }
-    private IEnumerator DestroyBomb()
+    }
+
+    private IEnumerator DestroyBombCor()
     {
         yield return new WaitForSeconds(explodeTime);
+        DestroyBomb();
+    } 
+
+    private void DestroyBomb() {
         ps.Play();
         rb.velocity = Vector2.zero;
+        bombSound.Play();
         Destroy(gameObject, destroyTime);
-    } 
+    }
 }

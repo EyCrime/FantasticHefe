@@ -9,42 +9,27 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
     public float speed;
     public float range;
+    public float dODBZN;
+    private float distToPlayer;
+    private float timeBetweenShots;
+    public float startTimeBetweenShots;
     public bool directionLeft;
+    private Animator animation;
     public Transform bulletSpawn;
     public GameObject player;
+    public GameObject coldProjectilePrefab;
+    public GameObject hotProjectilePrefab;
     public Rigidbody2D rb;
+    public Slider slider;
+    public AudioSource iceBulletSound;
+    public AudioSource fireBulletSound;
     public Player playerScript;
-
+    public HealthBar healthBar;
     [SerializeField] private Inventory inventory;
     [SerializeField] private SignalObject scoreSignal;
     [SerializeField] private SignalObject temperatureSignal;
     [SerializeField] private Temperature temperature;
-
     [SerializeField] public EnemyType type;
-
-    public Slider slider;
-
-    Animator animation;
-
-    private float distToPlayer;
-
-    //  public float speed;
-    //public float stoppingDistance;
-    //ublic float walkspeed, range;
-    //private float distToPlayer;
-
-    public HealthBar healthBar;
-
-    private float timeBetweenShots;
-    public float startTimeBetweenShots;
-
-    public GameObject coldProjectilePrefab;
-    public GameObject hotProjectilePrefab;
-
-    public float dODBZN;
-
-    public AudioSource iceBulletSound;
-    public AudioSource fireBulletSound;
 
     void Start()
     {
@@ -63,6 +48,7 @@ public class Enemy : MonoBehaviour
 
         animation = GetComponent<Animator>();
     }
+    
     void Update()
     {
         distToPlayer = Vector2.Distance(transform.position, player.transform.position);

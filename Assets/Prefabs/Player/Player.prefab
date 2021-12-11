@@ -5113,15 +5113,19 @@ MonoBehaviour:
   bulletSpawn: {fileID: 7877715399706416575}
   inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
   coldWaterBulletPrefab: {fileID: 7580769789054152623, guid: a553b87fba8affc46806311e12238d24, type: 3}
+  projectilePrefab: {fileID: 2861074894929754791, guid: 79b559d2254629e4185a7938d0e1619d, type: 3}
   hotWaterBulletPrefab: {fileID: 8818128758162697875, guid: 111e432064326ee4391bed50a1d4f044, type: 3}
   switchAmmoSignal: {fileID: 11400000, guid: 478d20ed8cdbd62479bc29dd19cafb49, type: 2}
   coldWaterSignal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
   hotWaterSignal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
-  projectilePrefab: {fileID: 2861074894929754791, guid: 79b559d2254629e4185a7938d0e1619d, type: 3}
   co2Signal: {fileID: 11400000, guid: 9c7cb1e3cd220a24b8476c03472d807a, type: 2}
+  directionRight: 0
   speed: 20
   bombSpeed: 6
-  directionRight: 0
+  waterBulletSound: {fileID: 0}
+  hotBulletSound: {fileID: 0}
+  bombSound: {fileID: 0}
+  throwSound: {fileID: 0}
 --- !u!50 &5771595989887656322
 Rigidbody2D:
   serializedVersion: 4
@@ -5227,6 +5231,7 @@ MonoBehaviour:
   temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
   force: 20
   rb: {fileID: 5771595989887656322}
+  damageSound: {fileID: 0}
 --- !u!61 &5256800419655555553
 BoxCollider2D:
   m_ObjectHideFlags: 0

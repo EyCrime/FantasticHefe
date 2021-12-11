@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     public Transform bulletSpawn;
-    public Inventory inventory;
     public GameObject coldWaterBulletPrefab;
     public GameObject projectilePrefab;
     public GameObject hotWaterBulletPrefab;
+    public Inventory inventory;
     public SignalObject switchAmmoSignal;
     public SignalObject coldWaterSignal;
     public SignalObject hotWaterSignal;
@@ -17,25 +17,21 @@ public class PlayerWeapon : MonoBehaviour
     public bool directionRight;
     public float speed = 20f;
     public float bombSpeed = 10f;
-
     public AudioSource waterBulletSound;
     public AudioSource hotBulletSound;
-    public AudioSource bombSound;
     public AudioSource throwSound;
 
     // Update is called once per frame
     void Update()
     {
-         if(Input.GetKeyDown(KeyCode.Mouse1))
-         {
-             if(inventory.currentCO2==inventory.maxCO2)
-             
-             {
-                 ShootBomb();
-                 throwSound.Play();
-                 bombSound.PlayDelayed(3.0f);
-             }
-         }
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if(inventory.currentCO2==inventory.maxCO2)
+            {
+                ShootBomb();
+                throwSound.Play();
+            }
+        }
 
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {

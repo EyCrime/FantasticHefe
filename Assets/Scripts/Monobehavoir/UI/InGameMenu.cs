@@ -13,6 +13,7 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreUI;
     [SerializeField] private Timer timer;
     [SerializeField] private AudioSource gameOverSound;
+    [SerializeField] private AudioSource victorySound;
 
 
     private bool gameIsActive = true;
@@ -46,6 +47,7 @@ public class InGameMenu : MonoBehaviour
         
         if(isVictory) 
         {
+            victorySound.Play();
             victoryMenuUI.SetActive(true);
         }
         else 

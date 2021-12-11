@@ -10,13 +10,10 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float range;
     public bool directionLeft;
-
     public Transform bulletSpawn;
-
     public GameObject player;
-    public Player playerScript;
-
     public Rigidbody2D rb;
+    public Player playerScript;
 
     [SerializeField] private Inventory inventory;
     [SerializeField] private SignalObject scoreSignal;
@@ -52,6 +49,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         player = GameObject.FindGameObjectWithTag("Player");
 
         playerScript = player.GetComponent<Player>();
@@ -117,11 +115,6 @@ public class Enemy : MonoBehaviour
                         projectile = Instantiate(hotProjectilePrefab, bulletSpawn.position, bulletSpawn.rotation);
                         fireBulletSound.Play();
                     }
-
-                    //Rigidbody2D rbProjectile = projectile.GetComponent<Rigidbody2D>();
-                    //Vector2 startPosition = projectile.transform.position;
-                    //Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
-                    //rbProjectile.AddForce((target - startPosition).normalized * speed, ForceMode2D.Impulse);
                 }
                 timeBetweenShots = startTimeBetweenShots;
             }

@@ -1644,6 +1644,10 @@ PrefabInstance:
       propertyPath: ingameMusic
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3163689465916933541, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
+      propertyPath: gameOverSound
+      value: 
+      objectReference: {fileID: 1654232881}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a98aca4223082ae4e98db43601fc75a7, type: 3}
 --- !u!1 &1654232879

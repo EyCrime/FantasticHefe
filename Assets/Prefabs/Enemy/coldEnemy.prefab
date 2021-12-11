@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1197884349877217823}
   m_Layer: 0
-  m_Name: coldEnemies
+  m_Name: coldEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

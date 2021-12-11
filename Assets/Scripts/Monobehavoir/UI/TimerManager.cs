@@ -7,6 +7,7 @@ using System;
 public class TimerManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currentTimeText;
+    [SerializeField] private SignalObject gameOverSignal;
     [SerializeField] private Timer timer;
 
     private bool timerActive = false;
@@ -22,7 +23,10 @@ public class TimerManager : MonoBehaviour
             timer.currentTime = timer.currentTime - Time.deltaTime;
 
             if(timer.currentTime <= 0)
-                timerActive = false; // Gameover
+            {
+                gameOverSignal.Raise();
+                timerActive = false;
+            }
 
             TimeSpan time = TimeSpan.FromSeconds(timer.currentTime);
             currentTimeText.text = time.ToString(@"mm\:ss");

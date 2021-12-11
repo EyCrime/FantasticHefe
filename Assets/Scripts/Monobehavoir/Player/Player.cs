@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
 
     public AudioSource damageSound;
-    public AudioSource deathSound;
 
     void Start()
     {
@@ -43,33 +42,32 @@ public class Player : MonoBehaviour
     {
         playerInventory.currentHealth--;
         playerHealthSignal.Raise();
-        if(playerInventory.currentHealth >= 1)
+        if(playerInventory.currentHealth > 0)
         {
             damageSound.Play();
         }
-        if (playerInventory.currentHealth <= 0)
+        else
         {
             Die();
         }
     }
 
-   public void Die()
+    public void Die()
     {
-        deathSound.Play();
         gameObject.SetActive(false);
         gameOverSignal.Raise();
     }
 
-     void OnTriggerEnter2D(Collider2D collision)
-     {
-         if (collision.CompareTag("Enemy")) 
-         {
-            TakeDamage(); 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy")) 
+        {
+            TakeDamage();
             Vector3 pushDirection = collision.transform.position - transform.position;
 
             pushDirection = -pushDirection.normalized;
 
             GetComponent<Rigidbody2D>().AddForce(pushDirection * force * 100);
         }
-     }
+    }
 }

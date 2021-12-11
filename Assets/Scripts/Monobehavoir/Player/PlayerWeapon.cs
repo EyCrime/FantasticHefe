@@ -7,18 +7,16 @@ public class PlayerWeapon : MonoBehaviour
     public Transform bulletSpawn;
     public Inventory inventory;
     public GameObject coldWaterBulletPrefab;
+    public GameObject projectilePrefab;
     public GameObject hotWaterBulletPrefab;
     public SignalObject switchAmmoSignal;
     public SignalObject coldWaterSignal;
     public SignalObject hotWaterSignal;
-    public GameObject projectilePrefab;
     public SignalObject co2Signal; 
     private bool isHotAmmo;
-
+    public bool directionRight;
     public float speed = 20f;
     public float bombSpeed = 10f;
-
-    public bool directionRight;
 
     public AudioSource waterBulletSound;
     public AudioSource hotBulletSound;
@@ -108,6 +106,7 @@ public class PlayerWeapon : MonoBehaviour
         hotWaterSignal.Raise();
         
     }
+
     void ShootBomb()
     {
         GameObject bomb = Instantiate(projectilePrefab, bulletSpawn.position, transform.rotation);
@@ -123,10 +122,9 @@ public class PlayerWeapon : MonoBehaviour
         inventory.currentCO2 = 0;
         co2Signal.Raise();
     }
+
     public void ChangeDirection()
     {
         directionRight = !directionRight;
-
-     }
-
+    }
 }

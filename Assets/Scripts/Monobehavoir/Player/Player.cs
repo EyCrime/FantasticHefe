@@ -52,22 +52,22 @@ public class Player : MonoBehaviour
         }
     }
 
-   public void Die()
+    public void Die()
     {
         gameObject.SetActive(false);
         gameOverSignal.Raise();
     }
 
-     void OnTriggerEnter2D(Collider2D collision)
-     {
-         if (collision.CompareTag("Enemy")) 
-         {
-            TakeDamage(); 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy")) 
+        {
+            TakeDamage();
             Vector3 pushDirection = collision.transform.position - transform.position;
 
             pushDirection = -pushDirection.normalized;
 
             GetComponent<Rigidbody2D>().AddForce(pushDirection * force * 100);
         }
-     }
+    }
 }

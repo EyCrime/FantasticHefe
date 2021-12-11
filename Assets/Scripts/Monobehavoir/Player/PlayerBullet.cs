@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
+    public float range;
     public float speed = 20f;
     public int damage = 25;
     public Rigidbody2D rb;
     public Vector2 startPosition;
     public Vector2 endPosition;
-    public float range;
     private Animator animator;
 
     [SerializeField] private BulletType bullet;
@@ -41,7 +41,6 @@ public class PlayerBullet : MonoBehaviour
                 if ((bullet == BulletType.HotBullet && enemy.type == EnemyType.ColdEnemy) || (bullet == BulletType.ColdBullet && enemy.type == EnemyType.HotEnemy)) 
                 {
                     enemy.TakeDamage(damage);
-                    
                 }
             }
             DestroyBullet();

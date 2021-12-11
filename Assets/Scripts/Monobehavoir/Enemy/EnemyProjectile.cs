@@ -11,12 +11,14 @@ public class EnemyProjectile : MonoBehaviour
     public Rigidbody2D rb;
     private Transform player;
     private Vector2 target;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.localPosition;
         endPosition = new Vector2(startPosition.x + range, startPosition.y);
+        animator = GetComponent<Animator>();
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -53,6 +55,8 @@ public class EnemyProjectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-        Destroy(gameObject);
+        animator.SetBool("destroy", true);
+        rb.velocity = Vector2.zero;
+        Destroy(gameObject, .4f);
     }
 }

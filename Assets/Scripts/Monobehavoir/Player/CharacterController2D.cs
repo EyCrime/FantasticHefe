@@ -42,8 +42,6 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
-
-
 	}
 
 	private void FixedUpdate()
@@ -52,7 +50,7 @@ public class CharacterController2D : MonoBehaviour
 		m_Grounded = false;
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
+		// This can be done using layers instead but Sample Assets will not overwrite the project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
@@ -93,21 +91,21 @@ public class CharacterController2D : MonoBehaviour
 		}
 
 		if(jumps>0)
-			{
-				jump=false;
-				isOkaytoFly=true;
-				if(m_Grounded)
+		{
+			jump=false;
+			isOkaytoFly=true;
+			if(m_Grounded)
 			{
 				jumps=0;
 				isOkaytoFly=false;
 			}
-				}
+		}
 
 		if(!fly && !m_Grounded)
-			{
-				jetpackForce=0;
-				
-			}
+		{
+			jetpackForce=0;
+			
+		}
 
 		// If the player should jump...
 		if (jump && m_Grounded)
@@ -132,10 +130,9 @@ public class CharacterController2D : MonoBehaviour
 			co2Signal.Raise();
 			isOkaytoFly=true;
 			if(jetpackForce>60f)
-				{
+			{
 				jetpackForce=60f;
-				}
-		
+			}
 		}
 	}
 			

@@ -953,8 +953,6 @@ MonoBehaviour:
   - {fileID: 4380775588900640379}
   - {fileID: 4380775589552693068}
   playerInventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
-  damagePane: {fileID: 4380775589836409430}
-  damageTime: 0.5
 --- !u!1 &4380775589282496680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2733,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 32768
-    ctime1: 63993
+    ctime1: 65342
     ctime2: 65535
     ctime3: 65535
     ctime4: 0
@@ -2962,6 +2960,7 @@ MonoBehaviour:
   currentTimeText: {fileID: 4380775590514419216}
   gameOverSignal: {fileID: 11400000, guid: 53d8cd4a66fe99e45a3d58a49400e10e, type: 2}
   timer: {fileID: 11400000, guid: 7ce3c01406e790342a11d8224ccc21b9, type: 2}
+  playerInventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
 --- !u!1 &4380775590729516975
 GameObject:
   m_ObjectHideFlags: 0

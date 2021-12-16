@@ -16,6 +16,7 @@ public class CharacterController2D : MonoBehaviour
 	public bool m_Grounded;            // Whether or not the player is grounded.
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+	private bool isOnLadder;
 	private Vector3 m_Velocity = Vector3.zero;
 
 	public bool isOkaytoFly = false;
@@ -120,7 +121,7 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce-150f));
 			jumps++;
 		}
-		else if(fly && inventory.currentCO2>0 && !m_Grounded && isOkaytoFly)
+		else if(fly && inventory.currentCO2>0 && !m_Grounded && isOkaytoFly && !isOnLadder)
 		{
 			// Add a vertical force to the player.
 			
@@ -146,5 +147,15 @@ public class CharacterController2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 		directionSignal.Raise();
+	}
+
+	private void OnTriggerEnter2D(Collider2D other) {
+		if(other.CompareTag("Ladder"))
+			isOnLadder = true;
+	}
+
+	private void OnTriggerExit2D(Collider2D other) {
+		if(other.CompareTag("Ladder"))
+			isOnLadder = false;
 	}
 }

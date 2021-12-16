@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 454154132565537792, guid: 06fcd6f65d7454d4c95503549c20cdd2, type: 3}
   m_Color: {r: 0.29411766, g: 0.59607846, b: 0.07058824, a: 1}
   m_FlipX: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   coldWaterSignal: {fileID: 11400000, guid: 8d1548af9ec43a541bcbbb31632f85e9, type: 2}
   hotWaterSignal: {fileID: 11400000, guid: bbbeaf6791cbdd94e9681f2bc5dba790, type: 2}
   scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
+  pickUpSound: {fileID: 0}
 --- !u!95 &625920004994691149
 Animator:
   serializedVersion: 3

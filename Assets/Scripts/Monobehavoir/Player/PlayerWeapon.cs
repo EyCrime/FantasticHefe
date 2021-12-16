@@ -17,39 +17,46 @@ public class PlayerWeapon : MonoBehaviour
     public bool directionRight;
     public float speed = 20f;
     public float bombSpeed = 10f;
+    public float fireRate = .5f;
+    private float nextTimeToShoot;
     public AudioSource waterBulletSound;
     public AudioSource hotBulletSound;
     public AudioSource throwSound;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse1))
+        if (Time.timeScale != 0f)
         {
-            if(inventory.currentCO2==inventory.maxCO2)
+            if(Input.GetKeyDown(KeyCode.Mouse1))
             {
-                ShootBomb();
-                throwSound.Play();
+                if(inventory.currentCO2==inventory.maxCO2)
+                {
+                    ShootBomb();
+                    throwSound.Play();
+                }
             }
-        }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            if (!isHotAmmo && inventory.coldWater > 0)
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                ShootColdBullet();
-                waterBulletSound.Play();
+                isHotAmmo = !isHotAmmo;
+                switchAmmoSignal.Raise();
             }
-            else if (isHotAmmo && inventory.hotWater > 0)
-            {
-                ShootHotBullet();
-                hotBulletSound.Play();
-            }
-        }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)){
-            isHotAmmo = !isHotAmmo;
-            switchAmmoSignal.Raise();
+            if(Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextTimeToShoot)
+            {
+                nextTimeToShoot = Time.time + 1f / fireRate;
+                if (!isHotAmmo && inventory.coldWater > 0)
+                {
+                    ShootColdBullet();
+                    waterBulletSound.Play();
+                }
+                else if (isHotAmmo && inventory.hotWater > 0)
+                {
+                    ShootHotBullet();
+                    hotBulletSound.Play();
+                }
+            }
         }
     }
 

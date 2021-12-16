@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Slider volumeSlider;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
     [SerializeField] private TMP_Dropdown graphicsDropdown;
 
@@ -14,6 +16,10 @@ public class SettingsMenu : MonoBehaviour
 
     private void Start () 
     {
+        float volume;
+        audioMixer.GetFloat("volume", out volume);
+        volumeSlider.value = volume;
+        
         graphicsDropdown.value = QualitySettings.GetQualityLevel();
         resolutions = Screen.resolutions;
 

@@ -12,6 +12,7 @@ public class EnemyProjectile : MonoBehaviour
     private Transform player;
     private Vector2 target;
     private Animator animator;
+    private CircleCollider2D collider;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class EnemyProjectile : MonoBehaviour
         startPosition = transform.localPosition;
         endPosition = new Vector2(startPosition.x + range, startPosition.y);
         animator = GetComponent<Animator>();
+        collider = GetComponent<CircleCollider2D>();
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -42,7 +44,7 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("Turn") && !hitInfo.CompareTag("co2") && !hitInfo.CompareTag("hotWater") && !hitInfo.CompareTag("coldWater"))
+        if (!hitInfo.CompareTag("Enemy") && !hitInfo.CompareTag("EnemyProjectile") && !hitInfo.CompareTag("Ladder") && !hitInfo.CompareTag("Turn") && !hitInfo.CompareTag("co2") && !hitInfo.CompareTag("hotWater") && !hitInfo.CompareTag("coldWater"))
         {
             Player player = hitInfo.GetComponent<Player>();
             if (player != null && hitInfo.isTrigger)
@@ -57,6 +59,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         animator.SetBool("destroy", true);
         rb.velocity = Vector2.zero;
+        collider.enabled = false;
         Destroy(gameObject, .4f);
     }
 }

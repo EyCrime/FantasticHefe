@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   maxHealth: 3
-  currentHealth: 3
-  coldWater: 0
+  currentHealth: 2
+  coldWater: 11
   hotWater: 5
-  score: 120
+  score: 270
   maxCO2: 100
   currentCO2: 0
+  gameOverReason: Denkst du, dass du fliegen kannst ya salame?!

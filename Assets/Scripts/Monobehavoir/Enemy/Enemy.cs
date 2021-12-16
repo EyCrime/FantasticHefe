@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            dODBZN = transform.position.x - player.transform.position.x;  // direction ohne den betrag zu nehmen
+            dODBZN = transform.position.x - player.transform.position.x;  // Distanz ohne den betrag zu nehmen
 
             if (type == EnemyType.HotEnemy)
             {
@@ -171,12 +171,18 @@ public class Enemy : MonoBehaviour
             temperatureSignal.Raise();
         }
 
-        if ((temperature.current <= temperature.min) || (temperature.current >= temperature.max))
+        if (temperature.current <= temperature.min)
         {
+            inventory.gameOverReason = "Man ist das kalt hier. \nAchte gefälligst auf die Temperatur!";
+            playerScript.Die();
+        }
+        else if (temperature.current >= temperature.max)
+        {
+            inventory.gameOverReason = "Man ist das heiß hier. \nAchte gefälligst auf die Temperatur!";
             playerScript.Die();
         }
      
-        inventory.score += 20;
+        inventory.score += 50;
         scoreSignal.Raise();
         Destroy(gameObject);
     }  

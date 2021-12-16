@@ -12,4 +12,5 @@ public class Inventory : ScriptableObject
    public int score;
    public int maxCO2;
    public int currentCO2;
+   public string gameOverReason;
 }

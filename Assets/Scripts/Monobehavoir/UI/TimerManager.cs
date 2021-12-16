@@ -9,6 +9,7 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentTimeText;
     [SerializeField] private SignalObject gameOverSignal;
     [SerializeField] private Timer timer;
+    [SerializeField] private Inventory playerInventory;
 
     private bool timerActive = false;
 
@@ -24,6 +25,7 @@ public class TimerManager : MonoBehaviour
 
             if(timer.currentTime <= 0)
             {
+                playerInventory.gameOverReason = "Hast du dich verlaufen oder warum bist du immernoch nicht am Ziel?";
                 gameOverSignal.Raise();
                 timerActive = false;
             }

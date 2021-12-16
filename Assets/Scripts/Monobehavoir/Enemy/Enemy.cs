@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            dODBZN = transform.position.x - player.transform.position.x;  // direction ohne den betrag zu nehmen
+            dODBZN = transform.position.x - player.transform.position.x;  // Distanz ohne den betrag zu nehmen
 
             if (type == EnemyType.HotEnemy)
             {
@@ -182,7 +182,7 @@ public class Enemy : MonoBehaviour
             playerScript.Die();
         }
      
-        inventory.score += 20;
+        inventory.score += 50;
         scoreSignal.Raise();
         Destroy(gameObject);
     }  

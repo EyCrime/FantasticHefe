@@ -33,7 +33,7 @@ public class PlayerBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (!hitInfo.CompareTag("Player") && !hitInfo.CompareTag("PlayerBullet") && !hitInfo.CompareTag("Turn") && !hitInfo.CompareTag("co2") && !hitInfo.CompareTag("hotWater") && !hitInfo.CompareTag("coldWater"))
+        if (!hitInfo.CompareTag("Player") && !hitInfo.CompareTag("PlayerBullet") && !hitInfo.CompareTag("Ladder") && !hitInfo.CompareTag("Turn") && !hitInfo.CompareTag("co2") && !hitInfo.CompareTag("hotWater") && !hitInfo.CompareTag("coldWater"))
         {   
             Enemy enemy = hitInfo.GetComponent<Enemy>();
             if (enemy != null)

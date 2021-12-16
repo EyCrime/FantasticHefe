@@ -11,7 +11,7 @@ public class DieWhenFall : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            playerInventory.gameOverReason = "Du darfst natürlich nicht runterfallen, Idiot!";
+            playerInventory.gameOverReason = "Denkst du, dass du fliegen kannst ya salame?!";
             gameOverSignal.Raise();
         }
     }

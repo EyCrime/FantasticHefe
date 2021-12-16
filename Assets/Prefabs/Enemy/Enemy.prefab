@@ -362,7 +362,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -7529469554864653123, guid: ae9af7015413a204aa5676246a8e754a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -411,24 +411,24 @@ MonoBehaviour:
   currentHealth: 75
   speed: 1
   range: 8
+  dODBZN: 0
+  startTimeBetweenShots: 2
   directionLeft: 0
   bulletSpawn: {fileID: 6175759426925247413}
   player: {fileID: 5771595989887656349, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
-  playerScript: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+  coldProjectilePrefab: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
+  hotProjectilePrefab: {fileID: 1609210896066645865, guid: 4d62d2c85e1c82544843af6d5733128a, type: 3}
   rb: {fileID: 0}
+  slider: {fileID: 0}
+  iceBulletSound: {fileID: 3163855610897378529}
+  fireBulletSound: {fileID: 9094749736092703884}
+  playerScript: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+  healthBar: {fileID: 4930552977238553803}
   inventory: {fileID: 11400000, guid: dda1ff826c8670c478bb99cd64aa2cc6, type: 2}
   scoreSignal: {fileID: 11400000, guid: 47274d9804529434abcd6e51dda22d8d, type: 2}
   temperatureSignal: {fileID: 11400000, guid: 7a95b303297d8ac4c8c9c71cc60c986c, type: 2}
   temperature: {fileID: 11400000, guid: d70c8404d7089894b8ce25555e9db0b6, type: 2}
   type: 1
-  slider: {fileID: 0}
-  healthBar: {fileID: 4930552977238553803}
-  startTimeBetweenShots: 2
-  coldProjectilePrefab: {fileID: 8871144805166858873, guid: d4a674985bab5b54da6294d869d68bf3, type: 3}
-  hotProjectilePrefab: {fileID: 1609210896066645865, guid: 4d62d2c85e1c82544843af6d5733128a, type: 3}
-  dODBZN: 0
-  iceBulletSound: {fileID: 3163855610897378529}
-  fireBulletSound: {fileID: 9094749736092703884}
 --- !u!61 &8794170492511935991
 BoxCollider2D:
   m_ObjectHideFlags: 0

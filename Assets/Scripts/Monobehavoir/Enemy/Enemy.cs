@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private float timeBetweenShots;
     public float startTimeBetweenShots;
     public bool directionLeft;
+    public bool flippedToPlayer;
     private Animator animation;
     public Transform bulletSpawn;
     public GameObject player;
@@ -55,6 +56,12 @@ public class Enemy : MonoBehaviour
 
         if (distToPlayer >= range)
         {
+            if (flippedToPlayer)
+            {
+                Flip();
+                flippedToPlayer = false;
+            }
+
             if (type == EnemyType.HotEnemy)
             {
                 animation.Play("HotEnemyMovement");
@@ -83,6 +90,7 @@ public class Enemy : MonoBehaviour
             if (dODBZN > 0 && !directionLeft || dODBZN < 0 && directionLeft)    
             {              
                 Flip();
+                flippedToPlayer = true;
             }
 
             if (timeBetweenShots <= 0)
@@ -126,7 +134,7 @@ public class Enemy : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
-        rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     private void Flip()

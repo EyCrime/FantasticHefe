@@ -24,32 +24,35 @@ public class PlayerWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse1))
+        if (Time.timeScale != 0f)
         {
-            if(inventory.currentCO2==inventory.maxCO2)
+            if(Input.GetKeyDown(KeyCode.Mouse1))
             {
-                ShootBomb();
-                throwSound.Play();
+                if(inventory.currentCO2==inventory.maxCO2)
+                {
+                    ShootBomb();
+                    throwSound.Play();
+                }
             }
-        }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            if (!isHotAmmo && inventory.coldWater > 0)
+            if(Input.GetKeyDown(KeyCode.Mouse0))
             {
-                ShootColdBullet();
-                waterBulletSound.Play();
+                if (!isHotAmmo && inventory.coldWater > 0)
+                {
+                    ShootColdBullet();
+                    waterBulletSound.Play();
+                }
+                else if (isHotAmmo && inventory.hotWater > 0)
+                {
+                    ShootHotBullet();
+                    hotBulletSound.Play();
+                }
             }
-            else if (isHotAmmo && inventory.hotWater > 0)
-            {
-                ShootHotBullet();
-                hotBulletSound.Play();
-            }
-        }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)){
-            isHotAmmo = !isHotAmmo;
-            switchAmmoSignal.Raise();
+            if (Input.GetKeyDown(KeyCode.LeftShift)){
+                isHotAmmo = !isHotAmmo;
+                switchAmmoSignal.Raise();
+            }
         }
     }
 

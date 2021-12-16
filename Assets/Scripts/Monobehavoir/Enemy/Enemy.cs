@@ -171,8 +171,14 @@ public class Enemy : MonoBehaviour
             temperatureSignal.Raise();
         }
 
-        if ((temperature.current <= temperature.min) || (temperature.current >= temperature.max))
+        if (temperature.current <= temperature.min)
         {
+            inventory.gameOverReason = "Man ist das kalt hier. \nAchte gefälligst auf die Temperatur!";
+            playerScript.Die();
+        }
+        else if (temperature.current >= temperature.max)
+        {
+            inventory.gameOverReason = "Man ist das heiß hier. \nAchte gefälligst auf die Temperatur!";
             playerScript.Die();
         }
      

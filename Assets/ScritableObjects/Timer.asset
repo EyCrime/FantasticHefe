@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Timer
   m_EditorClassIdentifier: 
   startMinutes: 5
-  currentTime: 300
+  currentTime: 290.25565

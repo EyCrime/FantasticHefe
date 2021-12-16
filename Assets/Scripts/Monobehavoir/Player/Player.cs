@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public SignalObject scoreSignal;
     public SignalObject CO2Signal;
     public SignalObject temperatureSignal;
+    public GameObject damagePane;
+    public float damageTime = 0.5f;
 
     public float force;
 
@@ -41,15 +43,24 @@ public class Player : MonoBehaviour
     public void TakeDamage()
     {
         playerInventory.currentHealth--;
-        playerHealthSignal.Raise();
         if(playerInventory.currentHealth > 0)
         {
+            playerHealthSignal.Raise();
             damageSound.Play();
+            damagePane.SetActive(true);
+            StartCoroutine(DamageCoroutine());
         }
         else
         {
+            playerInventory.gameOverReason = "Du hast kein Leben mehr! \nWobei... hattest du auch so nie.";
             Die();
         }
+    }
+
+    private IEnumerator DamageCoroutine()
+    {
+        yield return new WaitForSeconds(damageTime);
+        damagePane.SetActive(false);
     }
 
     public void Die()

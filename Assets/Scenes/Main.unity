@@ -1265,6 +1265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be8c630c801b8a4fb3551ba18348eb3, type: 3}
+--- !u!1 &2111691350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4380775589836409430, guid: 229fa9ba59017854e8a08b11e9f7251a, type: 3}
+  m_PrefabInstance: {fileID: 1708095514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &894596537862775005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1336,6 +1341,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
+      propertyPath: damagePane
+      value: 
+      objectReference: {fileID: 2111691350}
     - target: {fileID: 8906437542960751725, guid: 45f8aeb32c1e09d4c94ef6561b9a0770, type: 3}
       propertyPath: damageSound
       value: 

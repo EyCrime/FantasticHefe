@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2861074894929754790}
   - component: {fileID: 7995025468671538040}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.08, y: -0.78}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5685adcf345434392eba1a8c979956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashRange: 1
+  splashRange: 2
   speed: 7
   explodeTime: 3
   destroyTime: 0.5

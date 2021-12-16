@@ -11,11 +11,11 @@ public class InventoryManager : MonoBehaviour
     public void UpdateInventory()
     {
         if(Item == ItemType.KaltesWasser)
-            itemDisplay.text = "" + playerInventory.coldWater;
+            itemDisplay.text = playerInventory.coldWater.ToString();
         else if(Item == ItemType.HeißesWasser)
-            itemDisplay.text = "" + playerInventory.hotWater;
+            itemDisplay.text = playerInventory.hotWater.ToString();
         else if(Item == ItemType.Score)
-            itemDisplay.text = "" + playerInventory.score;
+            itemDisplay.text = playerInventory.score.ToString();
     }
 
     private enum ItemType{

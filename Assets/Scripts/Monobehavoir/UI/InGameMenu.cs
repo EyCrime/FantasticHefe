@@ -15,10 +15,9 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreUI;
     [SerializeField] private TextMeshProUGUI gameOverReason;
     [SerializeField] private Timer timer;
+    [SerializeField] private PlayFabManager playFabManager;
     [SerializeField] private AudioSource gameOverSound;
     [SerializeField] private AudioSource victorySound;
-
-
     private bool gameIsActive = true;
     private bool gameIsFinished;
 
@@ -52,6 +51,8 @@ public class InGameMenu : MonoBehaviour
         
             scoreSignal.Raise(); 
             scoreUI.text = playerInventory.score.ToString();
+            
+            playFabManager.SendLeaderboard(playerInventory.score);
 
             victorySound.Play();
             victoryMenuUI.SetActive(true);
@@ -70,12 +71,6 @@ public class InGameMenu : MonoBehaviour
         Time.timeScale = 0f;
         gameIsActive = false;
         gameIsFinished = true;
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("QUIT");
-        Application.Quit();
     }
 
     public void RestartGame()
